@@ -295,9 +295,9 @@ Quay lại câu hỏi của bạn Việt ở đầu bài: Mẹ cho **12 gói k�
 
 ## 🗺️ SƠ ĐỒ TỔNG KẾT KIẾN THỨC CỐT LÕI (DÀNH CHO ÔN THI)
 
-```text
+<pre>
                        ┌─────────────────────────────────────────┐
-                       │      QUAN HỆ CHIA HẾT: a = b × k        │
+                       │      QUAN HỆ CHIA HẾT: a = b . k        │
                        │            (với a, b ∈ ℕ; b ≠ 0)        │
                        └────────────────────┬────────────────────┘
                                             │
@@ -308,9 +308,14 @@ Quay lại câu hỏi của bạn Việt ở đầu bài: Mẹ cho **12 gói k�
      ├───────────────────────────┤                     ├───────────────────────────┤
      │ • a là BỘI của b: B(b)    │                     │ 1. Cùng chia hết:         │
      │   ➔ Nhân b với 0, 1, 2... │                     │    a ⋮ m và b ⋮ m         │
-     │                           │                     │    ➔ (a ± b) ⋮ m          │
-     │ • b là ƯỚC của a: Ư(a)    │                     │                           │
-     │   ➔ Chia a cho 1, 2... a  │                     │ 2. Chỉ 1 số không chia hết│
-     │     (Ghép cặp đối xứng)   │                     │    a ⋮ m và b ∤ m         │
-     └───────────────────────────┘                     │    ➔ (a ± b) ∤ m          │
+     │                           │                     │    ➔ (a + b) ⋮ m          │
+     │ • b là ƯỚC của a: Ư(a)    │                     │    ➔ (a - b) ⋮ m (a ≥ b)  │
+     │   ➔ Chia a cho 1, 2... a  │                     │                           │
+     │     (Ghép cặp đối xứng)   │                     │ 2. Chỉ 1 số không chia hết│
+     └───────────────────────────┘                     │    a ⋮ m và b ∤ m         │
+                                                       │    ➔ (a + b) ∤ m          │
+                                                       │    ➔ (a - b) ∤ m (a > b)  │
                                                        └───────────────────────────┘
+</pre>
+
+    

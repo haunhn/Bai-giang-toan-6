@@ -295,27 +295,9 @@ Quay lại câu hỏi của bạn Việt ở đầu bài: Mẹ cho **12 gói k�
 
 ## 🗺️ SƠ ĐỒ TỔNG KẾT KIẾN THỨC CỐT LÕI (DÀNH CHO ÔN THI)
 
-<pre>
-                       ┌─────────────────────────────────────────┐
-                       │      QUAN HỆ CHIA HẾT: a = b . k        │
-                       │            (với a, b ∈ ℕ; b ≠ 0)        │
-                       └────────────────────┬────────────────────┘
-                                            │
-                   ┌────────────────────────┴────────────────────────┐
-                   ▼                                                 ▼
-     ┌───────────────────────────┐                     ┌───────────────────────────┐
-     │     KHÁI NIỆM ƯỚC & BỘI   │                     │ TÍNH CHẤT CHIA HẾT (TỔNG) │
-     ├───────────────────────────┤                     ├───────────────────────────┤
-     │ • a là BỘI của b: B(b)    │                     │ 1. Cùng chia hết:         │
-     │   ➔ Nhân b với 0, 1, 2... │                     │    a ⋮ m và b ⋮ m         │
-     │                           │                     │    ➔ (a + b) ⋮ m          │
-     │ • b là ƯỚC của a: Ư(a)    │                     │    ➔ (a - b) ⋮ m (a ≥ b)  │
-     │   ➔ Chia a cho 1, 2... a  │                     │                           │
-     │     (Ghép cặp đối xứng)   │                     │ 2. Chỉ 1 số không chia hết│
-     └───────────────────────────┘                     │    a ⋮ m và b ∤ m         │
-                                                       │    ➔ (a + b) ∤ m          │
-                                                       │    ➔ (a - b) ∤ m (a > b)  │
-                                                       └───────────────────────────┘
-</pre>
-
-    
+| <div align="center">🎯 <b>TRỌNG TÂM: QUAN HỆ CHIA HẾT</b><br><code>a = b . k</code> <i>(với a, b ∈ ℕ; b ≠ 0)</i> ➔ <b><code>a ⋮ b</code></b></div> |
+| :--- |
+| **🟠 NHÁNH 1: KHÁI NIỆM ƯỚC & BỘI** |
+| • **a là BỘI của b** — Kí hiệu: **`B(b)`**<br>  ➔ *Cách tìm:* Nhân *b* lần lượt với `0, 1, 2, 3, ...` (Tập hợp vô hạn).<br><br>• **b là ƯỚC của a** — Kí hiệu: **`Ư(a)`**<br>  ➔ *Cách tìm:* Chia *a* lần lượt cho `1, 2, ..., a` (Tập hợp hữu hạn).<br>  *(Mẹo: Dùng phương pháp ghép cặp nhân đối xứng từ ngoài vào trong để không bao giờ bị sót nghiệm).* |
+| **🔵 NHÁNH 2: TÍNH CHẤT CHIA HẾT CỦA TỔNG VÀ HIỆU** |
+| • **Tính chất 1 (Trường hợp cùng chia hết):**<br>  Nếu **`a ⋮ m`** và **`b ⋮ m`** thì:<br>  ➔ **`(a + b) ⋮ m`** và **`(a - b) ⋮ m`** *(với điều kiện a ≥ b)*.<br><br>• **Tính chất 2 (Trường hợp chỉ có một số không chia hết):**<br>  Nếu **`a ⋮ m`** và **`b ∤ m`** thì:<br>  ➔ **`(a + b) ∤ m`** và **`(a - b) ∤ m`** *(với điều kiện a > b)*.<br>  *(⚠️ Cảnh báo: Nếu có từ 2 số hạng trở lên không chia hết, tuyệt đối không dùng tính chất 2).* |

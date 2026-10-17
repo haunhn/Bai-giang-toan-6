@@ -6,7 +6,7 @@ Chào mừng các em học sinh đến với không gian tự học môn Toán 6
 ## 📂 CHƯƠNG II: TÍNH CHIA HẾT TRONG TẬP HỢP CÁC SỐ TỰ NHIÊN
 Hệ thống bài học và trò chơi tương tác của Chương 2:
 
-* **[Bài 8: Quan hệ chia hết và tính chất](Chuong-2-bai-8.md)** ✅ *(Đã phát hành)*
+* **[Bài 8: Quan hệ chia hết và tính chất](bai-8.html)** ✅ *(Đã phát hành)*
 * **Bài 9: Dấu hiệu chia hết** ⏳ *(Đang biên soạn)*
 * **Bài 10: Số nguyên tố** ⏳ *(Đang biên soạn)*
 * **Luyện tập chung** ⏳ *(Đang biên soạn)*

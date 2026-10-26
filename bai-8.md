@@ -1,456 +1,451 @@
 <style>
-  /* Ẩn tiêu đề mặc định Bai-giang-toan-6 của GitHub Pages và mở rộng khung nhìn */
+  /* Ẩn tiêu đề mặc định của GitHub Pages & Thiết lập nền Xanh Nước Biển Nhạt */
   .markdown-body > h1:first-child { display: none !important; }
-  .container-lg, .markdown-body { max-width: 980px !important; margin: 0 auto !important; padding: 16px !important; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important; color: #0f172a !important; background-color: #f0f9ff !important; }
+  .container-lg, .markdown-body { max-width: 980px !important; margin: 0 auto !important; padding: 16px !important; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important; color: #0c4a6e !important; background-color: #f0f9ff !important; }
   body { background-color: #f0f9ff !important; }
 
-  /* Thanh điều khiển cố định */
-  .sky-topbar { position: sticky; top: 10px; z-index: 999; background: #ffffff; border: 2px solid #0284c7; border-radius: 12px; padding: 12px 20px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 8px 20px rgba(2, 132, 199, 0.15); flex-wrap: wrap; gap: 10px; }
-  .sky-topbar-title { font-weight: 800; color: #0c4a6e; font-size: 1rem; letter-spacing: 0.3px; }
-  .sky-topbar-actions { display: flex; align-items: center; gap: 12px; }
-  .sky-score { background: #e0f2fe; color: #0369a1; border: 1.5px solid #0284c7; padding: 6px 16px; border-radius: 99px; font-weight: 800; font-size: 0.95rem; }
-  .sky-sound-btn { background: #0284c7; color: #ffffff; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.9rem; transition: 0.2s; }
+  /* Thanh điều khiển cố định (Sticky Bar) */
+  .sky-topbar { position: sticky; top: 10px; z-index: 999; background: #ffffff; border: 2px solid #0284c7; border-radius: 12px; padding: 10px 20px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 8px 20px rgba(2, 132, 199, 0.14); flex-wrap: wrap; gap: 10px; }
+  .sky-topbar-title { font-weight: 800; color: #075985; font-size: 0.98rem; letter-spacing: 0.3px; }
+  .sky-topbar-right { display: flex; align-items: center; gap: 12px; }
+  .sky-score-badge { background: #e0f2fe; color: #0369a1; border: 1.5px solid #0284c7; padding: 5px 16px; border-radius: 99px; font-weight: 800; font-size: 0.95rem; }
+  .sky-sound-btn { background: #0284c7; color: #ffffff; border: none; padding: 7px 15px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.88rem; transition: 0.2s; }
   .sky-sound-btn:hover { background: #0369a1; }
 
-  /* Khung Banner mở đầu */
-  .sky-hero { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border-radius: 16px; padding: 32px 24px; text-align: center; margin-bottom: 28px; box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2); border: 2px solid #38bdf8; }
-  .sky-hero-tag { display: inline-block; background: #e0f2fe; color: #0c4a6e; font-weight: 800; font-size: 0.85rem; padding: 6px 18px; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px; }
-  .sky-hero-title { color: #ffffff !important; font-size: 2rem !important; font-weight: 800 !important; margin: 0 0 18px 0 !important; border: none !important; padding: 0 !important; line-height: 1.3 !important; }
-  .sky-meta-list { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
-  .sky-meta-chip { background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); color: #ffffff; padding: 6px 16px; border-radius: 8px; font-size: 0.92rem; font-weight: 600; backdrop-filter: blur(4px); }
+  /* Khung Banner chính */
+  .sky-hero { background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border: 2px solid #0284c7; border-radius: 16px; padding: 30px 24px; text-align: center; margin-bottom: 26px; box-shadow: 0 8px 22px rgba(2, 132, 199, 0.1); }
+  .sky-hero-tag { display: inline-block; background: #0284c7; color: #ffffff; font-weight: 800; font-size: 0.82rem; padding: 5px 16px; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 10px; }
+  .sky-hero-title { color: #0c4a6e !important; font-size: 1.95rem !important; font-weight: 800 !important; margin: 0 0 14px 0 !important; border: none !important; padding: 0 !important; }
+  .sky-meta-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+  .sky-meta-item { background: #ffffff; border: 1px solid #7dd3fc; color: #0369a1; padding: 5px 14px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; }
 
-  /* Khung từng phần bài giảng (Section Card) */
-  .sky-card { background: #ffffff; border: 2px solid #7dd3fc; border-radius: 16px; margin-bottom: 28px; overflow: hidden; box-shadow: 0 6px 18px rgba(2, 132, 199, 0.08); }
-  .sky-card-header { background: linear-gradient(90deg, #e0f2fe 0%, #bae6fd 100%); border-bottom: 2px solid #7dd3fc; padding: 16px 24px; color: #0c4a6e; font-size: 1.25rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.4px; }
-  .sky-card-body { padding: 24px; line-height: 1.75; font-size: 1.02rem; }
+  /* Hệ thống Khung bài giảng (Section Frames) */
+  .sky-card { background: #ffffff; border: 2px solid #bae6fd; border-radius: 16px; margin-bottom: 28px; overflow: hidden; box-shadow: 0 5px 15px rgba(2, 132, 199, 0.06); }
+  .sky-card-head { background: linear-gradient(90deg, #e0f2fe 0%, #bae6fd 100%); border-bottom: 2px solid #7dd3fc; padding: 14px 22px; color: #0c4a6e; font-size: 1.18rem; font-weight: 800; display: flex; justify-content: space-between; align-items: center; }
+  .sky-step-tag { background: #0284c7; color: #fff; font-size: 0.78rem; padding: 3px 12px; border-radius: 12px; font-weight: 700; }
+  .sky-card-body { padding: 24px; line-height: 1.7; font-size: 1rem; }
 
-  /* Khung con (Sub-box) */
-  .sky-subbox { background: #f8fafc; border: 1.5px solid #bae6fd; border-radius: 12px; padding: 20px; margin-bottom: 22px; }
-  .sky-subbox:last-child { margin-bottom: 0; }
-  .sky-sub-heading { color: #0284c7; font-size: 1.15rem; font-weight: 800; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #e0f2fe; }
+  /* Khung Lý thuyết cô đọng (Đặt trước Trạm khám phá) */
+  .sky-theory-box { background: #f0f9ff; border: 1.5px solid #7dd3fc; border-left: 6px solid #0284c7; border-radius: 12px; padding: 18px 20px; margin-bottom: 20px; }
+  .sky-theory-head { font-weight: 800; color: #0369a1; font-size: 1.05rem; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.3px; border-bottom: 1.5px solid #bae6fd; padding-bottom: 6px; }
+  .sky-theory-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 10px; }
+  .sky-mini-card { background: #ffffff; border: 1px solid #bae6fd; border-radius: 10px; padding: 14px 16px; }
+  .sky-mini-title { font-weight: 800; color: #0284c7; margin-bottom: 6px; font-size: 0.98rem; }
+  .sky-warn-strip { background: #fef9c3; border: 1px solid #fde047; border-left: 5px solid #eab308; border-radius: 8px; padding: 12px 16px; margin-top: 14px; color: #713f12; font-size: 0.95rem; }
+  .sky-danger-strip { background: #ffe4e6; border: 1px solid #fda4af; border-left: 5px solid #e11d48; border-radius: 8px; padding: 12px 16px; margin-top: 14px; color: #881337; font-size: 0.95rem; }
 
-  /* Khung Ghi nhớ, Định nghĩa, Cảnh báo (Thay thế hoàn toàn chữ xám xấu xí) */
-  .sky-alert { background: #e0f2fe; border-left: 6px solid #0284c7; border-radius: 10px; padding: 16px 20px; margin: 16px 0; color: #0c4a6e; }
-  .sky-alert-title { font-weight: 800; font-size: 1rem; margin-bottom: 8px; text-transform: uppercase; color: #0369a1; }
-  .sky-alert-warn { background: #fef9c3; border-left: 6px solid #eab308; color: #713f12; }
-  .sky-alert-warn .sky-alert-title { color: #a16207; }
-  .sky-alert-danger { background: #ffe4e6; border-left: 6px solid #e11d48; color: #881337; }
-  .sky-alert-danger .sky-alert-title { color: #be123c; }
-
-  /* Kí hiệu toán học nổi bật */
-  .m-tag { background: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; padding: 2px 8px; border-radius: 6px; font-family: 'Consolas', monospace; font-weight: 700; font-size: 0.96em; display: inline-block; }
-
-  /* Bảng chuẩn đẹp */
-  .sky-table { width: 100%; border-collapse: collapse; margin: 16px 0; border-radius: 10px; overflow: hidden; border: 1.5px solid #7dd3fc; }
-  .sky-table th { background: #0284c7 !important; color: #ffffff !important; padding: 12px 16px !important; text-align: left; font-weight: 700; border: 1px solid #0369a1 !important; }
-  .sky-table td { padding: 12px 16px !important; border: 1px solid #bae6fd !important; background: #ffffff !important; color: #0f172a !important; vertical-align: top; }
+  /* Bảng quy tắc */
+  .sky-table { width: 100%; border-collapse: collapse; margin: 12px 0; border-radius: 10px; overflow: hidden; border: 1.5px solid #7dd3fc; }
+  .sky-table th { background: #0284c7 !important; color: #ffffff !important; padding: 11px 15px !important; text-align: left; font-weight: 800; border: 1px solid #0369a1 !important; }
+  .sky-table td { padding: 11px 15px !important; border: 1px solid #bae6fd !important; background: #ffffff !important; color: #0c4a6e !important; vertical-align: top; }
   .sky-table tr:nth-child(even) td { background: #f0f9ff !important; }
 
-  /* Nút mở lời giải */
+  /* Khung Trạm khám phá tương tác */
+  .sky-quest-box { background: #f8fafc; border: 2px dashed #0284c7; border-radius: 12px; padding: 18px 20px; margin-bottom: 10px; }
+  .sky-quest-title { font-weight: 800; color: #0369a1; margin-bottom: 10px; font-size: 1.03rem; text-transform: uppercase; }
+
+  /* Nút chọn số (Number Chips) */
+  .chip-grid { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; }
+  .num-chip { background: #ffffff; border: 2px solid #7dd3fc; color: #0c4a6e; padding: 9px 16px; border-radius: 10px; font-weight: 800; font-size: 1rem; cursor: pointer; transition: 0.2s; user-select: none; text-align: center; min-width: 68px; }
+  .num-chip:hover { background: #e0f2fe; border-color: #0284c7; transform: translateY(-2px); }
+  .num-chip.correct { background: #0284c7; border-color: #075985; color: #ffffff; }
+  .num-chip.wrong { background: #ffe4e6; border-color: #e11d48; color: #9f1239; text-decoration: line-through; opacity: 0.75; }
+
+  /* Phòng thí nghiệm nhập số tương tác */
+  .lab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 14px 0; }
+  .lab-box { background: #ffffff; border: 1.5px solid #bae6fd; border-radius: 12px; padding: 16px; }
+  .lab-row-inp { display: flex; align-items: center; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+  .sky-input { width: 68px; padding: 6px 8px; border: 2px solid #0284c7; border-radius: 8px; font-weight: 800; text-align: center; font-size: 0.98rem; color: #0c4a6e; background: #f0f9ff; outline: none; }
+  .sky-input:focus { border-color: #075985; background: #ffffff; }
+  .sky-btn { background: #0284c7; color: #ffffff; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.2s; }
+  .sky-btn:hover { background: #0369a1; }
+  .lab-msg { font-size: 0.92rem; font-weight: 700; margin-top: 8px; min-height: 22px; }
+
+  /* Bảng phân loại tương tác (Trạm 3) */
+  .sort-item { background: #ffffff; border: 1.5px solid #bae6fd; border-radius: 10px; padding: 12px 16px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .sort-expr { font-weight: 800; font-size: 1.02rem; color: #0c4a6e; }
+  .sort-btns { display: flex; gap: 8px; }
+  .s-btn { background: #f0f9ff; border: 2px solid #7dd3fc; color: #0369a1; padding: 6px 14px; border-radius: 8px; font-weight: 800; cursor: pointer; transition: 0.2s; }
+  .s-btn:hover:not(:disabled) { background: #e0f2fe; border-color: #0284c7; }
+  .s-btn.ok { background: #dcfce7; border-color: #16a34a; color: #166534; }
+  .s-btn.err { background: #ffe4e6; border-color: #e11d48; color: #9f1239; }
+  .sort-fb { width: 100%; font-size: 0.9rem; font-weight: 600; margin-top: 4px; display: none; padding: 8px 12px; border-radius: 6px; }
+
+  .s-tag { background: #ffffff; color: #0369a1; border: 1px solid #7dd3fc; padding: 1px 8px; border-radius: 6px; font-family: 'Consolas', monospace; font-weight: 800; font-size: 0.95em; display: inline-block; }
+
+  /* Trò chơi Nối cặp (Matching Game) */
+  .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 14px; }
+  .match-head { background: #0284c7; color: #ffffff; text-align: center; padding: 9px; border-radius: 8px; font-weight: 800; margin-bottom: 10px; }
+  .m-card { background: #ffffff; border: 2px solid #7dd3fc; border-radius: 10px; padding: 13px 15px; margin-bottom: 10px; font-weight: 700; color: #0c4a6e; cursor: pointer; transition: 0.2s; display: flex; justify-content: space-between; align-items: center; user-select: none; }
+  .m-card:hover:not(.matched) { background: #e0f2fe; border-color: #0284c7; transform: translateY(-2px); }
+  .m-card.selected { background: #0284c7; color: #ffffff; border-color: #075985; box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.25); }
+  .m-card.matched { background: #dcfce7; border-color: #16a34a; color: #166534; cursor: default; }
+  .m-card.wrong { background: #ffe4e6; border-color: #e11d48; color: #9f1239; }
+  .m-badge { font-size: 0.78rem; background: #16a34a; color: #fff; padding: 2px 8px; border-radius: 10px; display: none; }
+  .m-card.matched .m-badge { display: inline-block; }
+
+  /* Trắc nghiệm tốc độ */
+  .q-card { background: #ffffff; border: 1.5px solid #7dd3fc; border-radius: 12px; padding: 16px; margin-bottom: 14px; }
+  .q-title { font-weight: 800; color: #0c4a6e; margin-bottom: 10px; }
+  .q-opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
+  .q-btn { background: #f0f9ff; border: 2px solid #bae6fd; padding: 10px 14px; border-radius: 8px; font-weight: 700; color: #0c4a6e; cursor: pointer; text-align: left; transition: 0.2s; }
+  .q-btn:hover:not(:disabled) { background: #e0f2fe; border-color: #0284c7; }
+  .q-btn.ok { background: #dcfce7; border-color: #16a34a; color: #166534; }
+  .q-btn.err { background: #ffe4e6; border-color: #e11d48; color: #9f1239; }
+  .q-exp { display: none; margin-top: 10px; padding: 10px 14px; border-radius: 8px; font-weight: 600; font-size: 0.92rem; }
+
+  /* Nút mở lời giải tự luận */
   details.sky-details { background: #ffffff; border: 2px solid #0284c7; border-radius: 10px; margin-top: 14px; overflow: hidden; }
   details.sky-details summary { background: #e0f2fe; color: #0c4a6e; padding: 12px 18px; font-weight: 800; cursor: pointer; list-style: none; user-select: none; transition: 0.2s; }
   details.sky-details summary:hover { background: #bae6fd; }
   .sky-details-body { padding: 18px; border-top: 1.5px solid #bae6fd; background: #ffffff; }
 
-  /* Trò chơi Nối cặp (Matching Game) */
-  .match-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px; }
-  .match-col-head { background: #0284c7; color: #ffffff; text-align: center; padding: 10px; border-radius: 8px; font-weight: 800; margin-bottom: 12px; }
-  .match-box { background: #f0f9ff; border: 2px solid #7dd3fc; border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; font-weight: 700; color: #0c4a6e; cursor: pointer; transition: 0.2s; display: flex; justify-content: space-between; align-items: center; user-select: none; }
-  .match-box:hover:not(.matched) { background: #e0f2fe; border-color: #0284c7; transform: translateY(-2px); }
-  .match-box.selected { background: #0284c7; color: #ffffff; border-color: #0c4a6e; box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.25); }
-  .match-box.matched { background: #dcfce7; border-color: #16a34a; color: #166534; cursor: default; }
-  .match-box.wrong { background: #ffe4e6; border-color: #e11d48; color: #9f1239; }
-  .match-tag { font-size: 0.8rem; background: #16a34a; color: #fff; padding: 2px 8px; border-radius: 10px; display: none; }
-  .match-box.matched .match-tag { display: inline-block; }
-
-  /* Trò chơi Trắc nghiệm */
-  .quiz-box { background: #f0f9ff; border: 1.5px solid #7dd3fc; border-radius: 12px; padding: 18px; margin-bottom: 18px; }
-  .quiz-title { font-weight: 800; color: #0c4a6e; margin-bottom: 12px; font-size: 1.05rem; }
-  .quiz-list { display: grid; gap: 10px; }
-  .quiz-opt { text-align: left; background: #ffffff; border: 2px solid #bae6fd; padding: 12px 16px; border-radius: 8px; font-weight: 700; color: #0f172a; cursor: pointer; font-size: 0.96rem; transition: 0.2s; }
-  .quiz-opt:hover:not(:disabled) { background: #e0f2fe; border-color: #0284c7; }
-  .quiz-opt.ok { background: #dcfce7; border-color: #16a34a; color: #166534; }
-  .quiz-opt.err { background: #ffe4e6; border-color: #e11d48; color: #9f1239; }
-  .quiz-msg { display: none; margin-top: 12px; padding: 12px 16px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; }
-  .btn-replay { background: #0284c7; color: #ffffff; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 700; cursor: pointer; margin-top: 10px; }
-  .btn-replay:hover { background: #0369a1; }
-
   @media (max-width: 680px) {
-    .match-container { grid-template-columns: 1fr; }
+    .match-grid { grid-template-columns: 1fr; }
   }
 </style>
 
 <!-- THANH ĐIỀU KHIỂN CỐ ĐỊNH -->
 <div class="sky-topbar">
   <div class="sky-topbar-title">TOÁN 6 — BÀI 8: QUAN HỆ CHIA HẾT VÀ TÍNH CHẤT</div>
-  <div class="sky-topbar-actions">
-    <div class="sky-score">ĐIỂM SỐ: <span id="scoreVal">0</span> / 100</div>
-    <button class="sky-sound-btn" id="btnAudio" onclick="switchSound()">Âm thanh: ĐANG BẬT</button>
+  <div class="sky-topbar-right">
+    <div class="sky-score-badge">ĐIỂM KHÁM PHÁ: <span id="ptsVal">0</span> / 100</div>
+    <button class="sky-sound-btn" id="btnSound" onclick="toggleSound()">Âm thanh: ĐANG BẬT</button>
   </div>
 </div>
 
-<!-- KHUNG TIÊU ĐỀ BÀI GIẢNG -->
+<!-- BANNER MỞ ĐẦU -->
 <div class="sky-hero">
   <div class="sky-hero-tag">CHƯƠNG II: TÍNH CHIA HẾT TRONG TẬP HỢP CÁC SỐ TỰ NHIÊN</div>
   <h1 class="sky-hero-title">BÀI 8: QUAN HỆ CHIA HẾT VÀ TÍNH CHẤT</h1>
-  <div class="sky-meta-list">
-    <div class="sky-meta-chip">Môn học: Toán 6 (Tập 1) — Kết nối tri thức với cuộc sống</div>
-    <div class="sky-meta-chip">Thời lượng tự học: 45 – 60 phút</div>
-    <div class="sky-meta-chip">Hình thức: Học liệu số tương tác</div>
+  <div class="sky-meta-row">
+    <div class="sky-meta-item">Toán 6 (Tập 1) — Kết nối tri thức với cuộc sống</div>
+    <div class="sky-meta-item">Thời lượng: 45 – 60 phút (Lý thuyết cô đọng + Tương tác + Trò chơi)</div>
   </div>
 </div>
 
-<!-- KHUNG 1: MỤC TIÊU CẦN ĐẠT -->
+<!-- NỘI DUNG 1: QUAN HỆ CHIA HẾT & KHÁI NIỆM ƯỚC - BỘI -->
 <div class="sky-card">
-  <div class="sky-card-header">MỤC TIÊU CẦN ĐẠT SAU BÀI HỌC</div>
-  <div class="sky-card-body">
-    <ol>
-      <li><b>Nhận biết</b> được quan hệ chia hết, khái niệm <b>ước</b> và <b>bội</b> trong tập hợp các số tự nhiên.</li>
-      <li><b>Sử dụng chuẩn xác</b> các kí hiệu toán học: chia hết (<span class="m-tag">⋮</span>), không chia hết (<span class="m-tag">∤</span>), thuộc (<span class="m-tag">∈</span>), không thuộc (<span class="m-tag">∉</span>).</li>
-      <li><b>Thiết lập được quy trình</b> tìm tập hợp các ước <span class="m-tag">Ư(a)</span> và tập hợp các bội <span class="m-tag">B(b)</span> của một số tự nhiên.</li>
-      <li><b>Vận dụng linh hoạt</b> hai tính chất chia hết của một tổng (hoặc một hiệu) để xét tính chia hết mà không cần tính giá trị biểu thức, đồng thời giải quyết các bài toán thực tiễn.</li>
-    </ol>
+  <div class="sky-card-head">
+    <span>NỘI DUNG 1: QUAN HỆ CHIA HẾT & KHÁI NIỆM ƯỚC – BỘI</span>
+    <span class="sky-step-tag">Phần 1 / 4</span>
   </div>
-</div>
-
-<!-- KHUNG 2: KHỞI ĐỘNG -->
-<div class="sky-card">
-  <div class="sky-card-header">KHỞI ĐỘNG: BÀI TOÁN THỰC TIỄN</div>
-  <div class="sky-card-body">
-    <p><b>Tình huống:</b> Nhân dịp sinh nhật, mẹ chuẩn bị cho Việt <b>12 gói kẹo</b> để liên hoan cùng các bạn, mỗi gói có <b>35 cái kẹo</b>. Việt dự định chia đều tổng số kẹo đó cho <b>5 bạn</b> trong nhóm học tập.</p>
-    <div class="sky-alert">
-      <div class="sky-alert-title">CÂU HỎI TƯ DUY</div>
-      Không cần đặt phép tính nhân <span class="m-tag">12 . 35</span> rồi chia cho <span class="m-tag">5</span>, làm thế nào để khẳng định ngay lập tức rằng Việt hoàn toàn có thể chia đều số kẹo đó mà không bị lẻ cái nào? Và nếu Việt cất bớt đi 2 gói kẹo, số kẹo còn lại có chia đều được cho 5 bạn nữa không?
-    </div>
-    <p>Hãy cùng khám phá cơ sở toán học đằng sau tình huống này qua 2 nội dung trọng tâm dưới đây.</p>
-  </div>
-</div>
-
-<!-- KHUNG 3: NỘI DUNG 1 -->
-<div class="sky-card">
-  <div class="sky-card-header">NỘI DUNG 1: QUAN HỆ CHIA HẾT VÀ KHÁI NIỆM ƯỚC – BỘI</div>
   <div class="sky-card-body">
 
-    <div class="sky-subbox">
-      <div class="sky-sub-heading">1.1. Khi nào số tự nhiên a chia hết cho số tự nhiên b?</div>
-      <p><b>Hoạt động khám phá 1:</b> Thực hiện hai phép chia sau và quan sát số dư:</p>
-      <ul>
-        <li><b>Phép chia 1:</b> <span class="m-tag">15 : 3</span> ➔ Thương là <b>5</b>, số dư bằng <b>0</b> <i>(vì 15 = 3 . 5)</i>.</li>
-        <li><b>Phép chia 2:</b> <span class="m-tag">16 : 3</span> ➔ Thương là <b>5</b>, số dư bằng <b>1</b> <i>(vì 16 = 3 . 5 + 1)</i>.</li>
-      </ul>
-      <div class="sky-alert">
-        <div class="sky-alert-title">ĐỊNH NGHĨA QUAN HỆ CHIA HẾT</div>
-        Cho hai số tự nhiên <i>a</i> và <i>b</i> (với điều kiện <b><i>b</i> ≠ 0</b>):
-        <ul>
-          <li>Nếu có số tự nhiên <i>k</i> sao cho <span class="m-tag">a = b . k</span> thì ta nói <b><i>a</i> chia hết cho <i>b</i></b> và kí hiệu là: <span class="m-tag">a ⋮ b</span></li>
-          <li>Nếu <i>a</i> không chia hết cho <i>b</i> (phép chia có số dư <i>r</i> với <i>0 &lt; r &lt; b</i>), ta kí hiệu là: <span class="m-tag">a ∤ b</span></li>
-        </ul>
+    <!-- LÝ THUYẾT NGẮN GỌN TRƯỚC TRẠM KHÁM PHÁ -->
+    <div class="sky-theory-box">
+      <div class="sky-theory-head">1. LÝ THUYẾT CỐT LÕI CẦN NHỚ</div>
+      <div class="sky-theory-grid">
+        <div class="sky-mini-card">
+          <div class="sky-mini-title">QUAN HỆ CHIA HẾT</div>
+          Cho hai số tự nhiên <i>a</i> và <i>b</i> (<span class="s-tag">b ≠ 0</span>):<br>
+          • Nếu có số tự nhiên <i>k</i> sao cho <span class="s-tag">a = b . k</span> thì ta nói <b><i>a</i> chia hết cho <i>b</i></b>, kí hiệu: <span class="s-tag">a ⋮ b</span>.<br>
+          • Nếu <i>a</i> không chia hết cho <i>b</i> (phép chia có dư), kí hiệu: <span class="s-tag">a ∤ b</span>.
+        </div>
+        <div class="sky-mini-card">
+          <div class="sky-mini-title">TÊN GỌI ƯỚC VÀ BỘI</div>
+          Khi <span class="s-tag">a ⋮ b</span>, ta định danh:<br>
+          • Số bị chia <b><i>a</i></b> là <b>BỘI</b> của <i>b</i> ➔ Kí hiệu tập hợp: <span class="s-tag">B(b)</span>.<br>
+          • Số chia <b><i>b</i></b> là <b>ƯỚC</b> của <i>a</i> ➔ Kí hiệu tập hợp: <span class="s-tag">Ư(a)</span>.<br>
+          • <i>Ví dụ:</i> Vì <span class="s-tag">24 ⋮ 8</span> nên <span class="s-tag">24 ∈ B(8)</span> và <span class="s-tag">8 ∈ Ư(24)</span>.
+        </div>
+      </div>
+      <div class="sky-warn-strip">
+        <b>Các trường hợp đặc biệt của số 0 và số 1:</b><br>
+        • <b>Số 0:</b> Là <b>bội</b> của mọi số tự nhiên khác 0, nhưng <b>không phải là ước</b> của bất kì số tự nhiên nào.<br>
+        • <b>Số 1:</b> Chỉ có 1 ước là chính nó (<span class="s-tag">Ư(1) = {1}</span>), nhưng lại là <b>ước của mọi số tự nhiên</b>.<br>
+        • Mọi số tự nhiên <span class="s-tag">a ≠ 0</span> luôn là ước của chính nó và là bội của chính nó.
       </div>
     </div>
 
-    <div class="sky-subbox">
-      <div class="sky-sub-heading">1.2. Khái niệm Ước và Bội</div>
-      <p>Khi có quan hệ chia hết <span class="m-tag">a ⋮ b</span>, hai số <i>a</i> và <i>b</i> được định danh như sau:</p>
-      <ul>
-        <li>Số <b><i>a</i></b> (số bị chia) được gọi là <b>BỘI</b> của <i>b</i>. Tập hợp các bội của <i>b</i> kí hiệu là <span class="m-tag">B(b)</span>.</li>
-        <li>Số <b><i>b</i></b> (số chia) được gọi là <b>ƯỚC</b> của <i>a</i>. Tập hợp các ước của <i>a</i> kí hiệu là <span class="m-tag">Ư(a)</span>.</li>
-      </ul>
-      <p><b>Ví dụ minh họa 1:</b> Xét phép tính <span class="m-tag">24 = 8 . 3</span>. Ta thấy <b>24 ⋮ 8</b>, do đó:</p>
-      <ul>
-        <li><b>24</b> là <b>bội</b> của 8 <i>(viết dưới dạng kí hiệu tập hợp: <span class="m-tag">24 ∈ B(8)</span>)</i>.</li>
-        <li><b>8</b> là <b>ước</b> của 24 <i>(viết dưới dạng kí hiệu tập hợp: <span class="m-tag">8 ∈ Ư(24)</span>)</i>.</li>
-        <li>Tương tự, vì <span class="m-tag">24 ⋮ 3</span> nên <b>3</b> cũng là một <b>ước</b> của 24 và <b>24</b> cũng là một <b>bội</b> của 3.</li>
-      </ul>
-      <div class="sky-alert sky-alert-warn">
-        <div class="sky-alert-title">CÁC TRƯỜNG HỢP ĐẶC BIỆT CỦA SỐ 0 VÀ SỐ 1</div>
-        <ul>
-          <li><b>Số 0:</b> Là <b>bội</b> của mọi số tự nhiên khác 0 <i>(vì <span class="m-tag">0 ⋮ b</span> với mọi <span class="m-tag">b ≠ 0</span>)</i>. Tuy nhiên, số 0 <b>không phải là ước</b> của bất kì số tự nhiên nào <i>(vì không có phép chia cho 0)</i>.</li>
-          <li><b>Số 1:</b> Chỉ có duy nhất một ước là chính nó (<span class="m-tag">Ư(1) = {1}</span>), nhưng số 1 lại là <b>ước của mọi số tự nhiên</b> <i>(vì <span class="m-tag">a ⋮ 1</span> với mọi số tự nhiên <span class="m-tag">a</span>)</i>.</li>
-          <li><b>Mọi số tự nhiên <i>a</i> (<i>a</i> ≠ 0)</b> luôn là ước của chính nó và là bội của chính nó.</li>
-        </ul>
+    <!-- TRẠM KHÁM PHÁ 1 -->
+    <div class="sky-quest-box">
+      <div class="sky-quest-title">TRẠM KHÁM PHÁ 1: SĂN TÌM TẬP HỢP CÁC ƯỚC CỦA 18 (+15 ĐIỂM)</div>
+      <p><b>Nhiệm vụ:</b> Số 18 chia hết cho những số nào dưới đây? Hãy <b>bấm chọn đúng 6 ước của 18</b> để hoàn thành tập hợp <span class="s-tag">Ư(18)</span>:</p>
+      <div class="chip-grid" id="u18Grid">
+        <div class="num-chip" onclick="pickU18(this, false, 'Cảnh báo bẫy! Không có phép chia cho 0 nên số 0 không bao giờ là ước của bất kì số nào!')">Số 0</div>
+        <div class="num-chip" onclick="pickU18(this, true, 'Chính xác! 18 = 1 . 18 nên 1 và 18 là cặp ước đầu tiên.')">Số 1</div>
+        <div class="num-chip" onclick="pickU18(this, true, 'Chính xác! 18 = 2 . 9 nên 2 là ước của 18.')">Số 2</div>
+        <div class="num-chip" onclick="pickU18(this, true, 'Chính xác! 18 = 3 . 6 nên 3 là ước của 18.')">Số 3</div>
+        <div class="num-chip" onclick="pickU18(this, false, 'Sai rồi! 18 chia 4 được 4 dư 2 (18 ∤ 4).')">Số 4</div>
+        <div class="num-chip" onclick="pickU18(this, true, 'Chính xác! 18 ⋮ 6 (cặp đối xứng với số 3).')">Số 6</div>
+        <div class="num-chip" onclick="pickU18(this, false, 'Sai rồi! 18 chia 8 được 2 dư 2 (18 ∤ 8).')">Số 8</div>
+        <div class="num-chip" onclick="pickU18(this, true, 'Chính xác! 18 ⋮ 9 (cặp đối xứng với số 2).')">Số 9</div>
+        <div class="num-chip" onclick="pickU18(this, true, 'Xuất sắc! Mọi số tự nhiên khác 0 luôn có ước lớn nhất là chính nó (18).')">Số 18</div>
       </div>
+      <div id="msgU18" style="font-weight:700; color:#0369a1; font-size:0.93rem; min-height:22px;"></div>
     </div>
 
-    <div class="sky-subbox">
-      <div class="sky-sub-heading">1.3. Quy trình tìm Ước và Bội của một số tự nhiên</div>
-      <p>Làm thế nào để liệt kê đầy đủ các ước và bội mà không bị sót nghiệm? Hãy đối chiếu qua bảng quy tắc chuẩn dưới đây:</p>
+  </div>
+</div>
+
+<!-- NỘI DUNG 2: QUY TRÌNH TÌM ƯỚC VÀ BỘI -->
+<div class="sky-card">
+  <div class="sky-card-head">
+    <span>NỘI DUNG 2: QUY TRÌNH TÌM TẬP HỢP ƯỚC VÀ BỘI</span>
+    <span class="sky-step-tag">Phần 2 / 4</span>
+  </div>
+  <div class="sky-card-body">
+
+    <!-- LÝ THUYẾT NGẮN GỌN TRƯỚC TRẠM KHÁM PHÁ -->
+    <div class="sky-theory-box">
+      <div class="sky-theory-head">2. BẢNG QUY TẮC TÌM ƯỚC VÀ BỘI CHUẨN XÁC</div>
       <table class="sky-table">
         <thead>
           <tr>
-            <th>Tiêu chí so sánh</th>
-            <th>QUY TẮC TÌM ƯỚC CỦA SỐ a (a &gt; 1)</th>
-            <th>QUY TẮC TÌM BỘI CỦA SỐ b (b ≠ 0)</th>
+            <th width="22%">Tiêu chí</th>
+            <th width="39%">QUY TẮC TÌM ƯỚC CỦA SỐ a (a &gt; 1)</th>
+            <th width="39%">QUY TẮC TÌM BỘI CỦA SỐ b (b ≠ 0)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><b>Phương pháp thực hiện</b></td>
-            <td>Lần lượt <b>chia <i>a</i></b> cho các số tự nhiên từ <span class="m-tag">1</span> đến <span class="m-tag">a</span>. Phép chia nào chia hết thì số chia đó là <b>ước</b> của <i>a</i>.</td>
-            <td>Lần lượt <b>nhân <i>b</i></b> với các số tự nhiên <span class="m-tag">0, 1, 2, 3, 4, ...</span> Các kết quả thu được đều là <b>bội</b> của <i>b</i>.</td>
+            <td><b>Cách thực hiện</b></td>
+            <td>Lần lượt <b>chia <i>a</i></b> cho các số tự nhiên từ <span class="s-tag">1</span> đến <span class="s-tag">a</span>. Phép chia nào chia hết thì số chia đó là <b>ước</b> của <i>a</i>.</td>
+            <td>Lần lượt <b>nhân <i>b</i></b> với <span class="s-tag">0, 1, 2, 3, 4, ...</span> Các kết quả thu được đều là <b>bội</b> của <i>b</i>.</td>
           </tr>
           <tr>
             <td><b>Số lượng phần tử</b></td>
-            <td><b>Hữu hạn</b> phần tử. Luôn bắt đầu bằng <span class="m-tag">1</span> và kết thúc bằng chính số <span class="m-tag">a</span>.</td>
-            <td><b>Vô số</b> phần tử. Luôn bắt đầu bằng số <span class="m-tag">0</span> và phải có dấu ba chấm <span class="m-tag">...</span> ở cuối tập hợp.</td>
-          </tr>
-          <tr>
-            <td><b>Ví dụ thực hành</b></td>
-            <td><b>Tìm tập hợp Ư(18):</b><br>Chia 18 lần lượt cho 1, 2, ..., 18.<br>➔ <span class="m-tag">Ư(18) = {1; 2; 3; 6; 9; 18}</span></td>
-            <td><b>Tìm tập hợp B(6):</b><br>Nhân 6 lần lượt với 0, 1, 2, 3, 4, ...<br>➔ <span class="m-tag">B(6) = {0; 6; 12; 18; 24; ...}</span></td>
+            <td><b>Hữu hạn</b> phần tử. Bắt đầu bằng <span class="s-tag">1</span> và kết thúc bằng chính số <span class="s-tag">a</span>.</td>
+            <td><b>Vô số</b> phần tử. Bắt đầu bằng số <span class="s-tag">0</span> và có dấu <span class="s-tag">...</span> ở cuối tập hợp.</td>
           </tr>
         </tbody>
       </table>
-
-      <div class="sky-alert">
-        <div class="sky-alert-title">MẸO TƯ DUY NHANH: PHƯƠNG PHÁP "CẶP THỪA SỐ ĐỐI XỨNG" KHI TÌM ƯỚC</div>
-        Khi tìm ước của một số lớn (ví dụ tìm <span class="m-tag">Ư(36)</span>), thay vì thực hiện 36 phép chia từ 1 đến 36, ta chỉ cần tìm các cặp số nhân với nhau bằng 36 từ ngoài vào trong:
-        <ul>
-          <li><span class="m-tag">1 . 36 = 36</span> ➔ Có cặp ước: <b>1</b> và <b>36</b></li>
-          <li><span class="m-tag">2 . 18 = 36</span> ➔ Có cặp ước: <b>2</b> và <b>18</b></li>
-          <li><span class="m-tag">3 . 12 = 36</span> ➔ Có cặp ước: <b>3</b> và <b>12</b></li>
-          <li><span class="m-tag">4 . 9 = 36</span> ➔ Có cặp ước: <b>4</b> và <b>9</b></li>
-          <li><span class="m-tag">6 . 6 = 36</span> ➔ Hai thừa số chạm nhau tại số <b>6</b> (dừng lại!).</li>
-        </ul>
-        ➔ Sắp xếp theo thứ tự tăng dần, ta thu được ngay: <span class="m-tag">Ư(36) = {1; 2; 3; 4; 6; 9; 12; 18; 36}</span>.
+      <div class="sky-warn-strip">
+        <b>Mẹo "Cặp thừa số đối xứng" khi tìm Ước của số lớn (như Ư(36)):</b><br>
+        Thay vì chia lần lượt từ 1 đến 36, ta tìm các cặp số nhân với nhau bằng 36 từ ngoài vào trong:<br>
+        • <span class="s-tag">36 = 1 . 36 = 2 . 18 = 3 . 12 = 4 . 9 = 6 . 6</span> (hai thừa số chạm nhau tại 6 thì dừng lại!).<br>
+        ➔ Sắp xếp tăng dần: <span class="s-tag">Ư(36) = {1; 2; 3; 4; 6; 9; 12; 18; 36}</span> (không bao giờ sót nghiệm!).
       </div>
+    </div>
 
-      <p><b>TRẠM DỪNG THỰC HÀNH SỐ 1:</b> Hãy tự nháp ra giấy câu trả lời trước khi nhấn vào thanh bên dưới để kiểm tra:</p>
-      <ol>
-        <li>Tìm tập hợp <span class="m-tag">Ư(20)</span>.</li>
-        <li>Tìm tập hợp <i>A</i> gồm các số tự nhiên <i>x</i> sao cho <span class="m-tag">x ∈ B(8)</span> và <span class="m-tag">x &lt; 40</span>.</li>
-      </ol>
-
-      <details class="sky-details" onclick="sndClick()">
-        <summary>[ NHẤN VÀO ĐÂY ĐỂ XEM ĐÁP ÁN & LỜI GIẢI CHI TIẾT ]</summary>
-        <div class="sky-details-body">
-          <ul>
-            <li><b>Câu 1:</b> Ta tách cặp nhân: <span class="m-tag">20 = 1 . 20 = 2 . 10 = 4 . 5</span>.<br>➔ Tập hợp các ước của 20 là: <span class="m-tag">Ư(20) = {1; 2; 4; 5; 10; 20}</span>.</li>
-            <li><b>Câu 2:</b> Nhân 8 lần lượt với 0, 1, 2, 3, 4 ta được: <span class="m-tag">0, 8, 16, 24, 32</span>. Nếu nhân tiếp với 5 thì <span class="m-tag">8 . 5 = 40</span> (không thỏa mãn điều kiện <i>x &lt; 40</i>).<br>➔ Vậy tập hợp cần tìm là: <span class="m-tag">A = {0; 8; 16; 24; 32}</span>.</li>
-          </ul>
+    <!-- TRẠM KHÁM PHÁ 2 -->
+    <div class="sky-quest-box">
+      <div class="sky-quest-title">TRẠM KHÁM PHÁ 2: PHÒNG THÍ NGHIỆM CẶP ƯỚC & BỘI CÓ ĐIỀU KIỆN (+20 ĐIỂM)</div>
+      <div class="lab-grid">
+        <div class="lab-box">
+          <b>Thí nghiệm A: Tìm cặp ước đối xứng của 20</b><br>
+          Ta tách: <span class="s-tag">20 = 1 . 20 = 2 . 10 = 4 . ?</span><br>
+          Do đó <span class="s-tag">Ư(20) = {1; 2; 4; ?; 10; 20}</span>. Số còn thiếu ở dấu <span class="s-tag">?</span> là bao nhiêu?
+          <div class="lab-row-inp">
+            <span>Ước còn thiếu = </span>
+            <input type="number" id="inpLab1" class="sky-input" placeholder="?">
+            <button class="sky-btn" onclick="checkLab(1, 5, 'Chính xác! Cặp nhân cuối cùng là 4 . 5 = 20 ➔ Ư(20) = {1; 2; 4; 5; 10; 20}!')">Kiểm tra</button>
+          </div>
+          <div class="lab-msg" id="msgLab1"></div>
         </div>
-      </details>
+
+        <div class="lab-box">
+          <b>Thí nghiệm B: Tìm bội thỏa mãn điều kiện</b><br>
+          Tìm số tự nhiên <span class="s-tag">x</span> lớn nhất sao cho <span class="s-tag">x ∈ B(8)</span> và <span class="s-tag">x &lt; 40</span>.<br>
+          <i>(Gợi ý: Nhân 8 với 0, 1, 2, 3, 4... nhưng phải nhỏ hơn hẳn 40)</i>.
+          <div class="lab-row-inp">
+            <span>Giá trị x lớn nhất = </span>
+            <input type="number" id="inpLab2" class="sky-input" placeholder="x = ?">
+            <button class="sky-btn" onclick="checkLab(2, 32, 'Tuyệt vời! Các bội nhỏ hơn 40 của 8 là {0; 8; 16; 24; 32} (không lấy 40 vì x < 40).')">Kiểm tra</button>
+          </div>
+          <div class="lab-msg" id="msgLab2"></div>
+        </div>
+      </div>
     </div>
 
   </div>
 </div>
 
-<!-- KHUNG 4: NỘI DUNG 2 -->
+<!-- NỘI DUNG 3: TÍNH CHẤT CHIA HẾT CỦA MỘT TỔNG (VÀ HIỆU) -->
 <div class="sky-card">
-  <div class="sky-card-header">NỘI DUNG 2: TÍNH CHẤT CHIA HẾT CỦA MỘT TỔNG (VÀ HIỆU)</div>
-  <div class="sky-card-body">
-    <p>Làm sao để biết một tổng lớn như <span class="m-tag">120 + 360 + 45</span> có chia hết cho 15 hay không mà không cần đặt tính cộng? Hai tính chất dưới đây là công cụ giúp ta giải quyết bài toán này trong 3 giây.</p>
-
-    <div class="sky-subbox">
-      <div class="sky-sub-heading">2.1. Tính chất 1: Trường hợp CHIA HẾT</div>
-      <p><b>Hoạt động khám phá 2:</b> Lấy hai số đều chia hết cho 5 là <span class="m-tag">15</span> và <span class="m-tag">25</span>. Xét tổng của chúng: <span class="m-tag">15 + 25 = 40</span>. Ta thấy <span class="m-tag">40 ⋮ 5</span>.</p>
-      <div class="sky-alert">
-        <div class="sky-alert-title">TÍNH CHẤT 1 (CÙNG CHIA HẾT ➔ TỔNG CHIA HẾT)</div>
-        Nếu <b>tất cả các số hạng</b> của một tổng đều chia hết cho cùng một số thì <b>tổng đó chia hết</b> cho số đó.<br>
-        • <b>Công thức tổng quát:</b> Với <i>a, b, m ∈ ℕ</i> và <i>m ≠ 0</i>: Nếu <span class="m-tag">a ⋮ m</span> và <span class="m-tag">b ⋮ m</span> thì <span class="m-tag">(a + b) ⋮ m</span>
-      </div>
-      <p><b>Mở rộng Tính chất 1:</b></p>
-      <ul>
-        <li><b>Đối với phép trừ</b> <i>(điều kiện a ≥ b)</i>: Nếu <span class="m-tag">a ⋮ m</span> và <span class="m-tag">b ⋮ m</span> thì <span class="m-tag">(a - b) ⋮ m</span>.</li>
-        <li><b>Đối với nhiều số hạng:</b> Nếu <span class="m-tag">a ⋮ m</span>, <span class="m-tag">b ⋮ m</span> và <span class="m-tag">c ⋮ m</span> thì <span class="m-tag">(a + b + c) ⋮ m</span>.</li>
-      </ul>
-      <p><b>Ví dụ minh họa 2:</b> Không thực hiện phép tính, xét xem biểu thức <span class="m-tag">A = 48 + 12 - 36</span> có chia hết cho 6 không?</p>
-      <ul>
-        <li><b>Phân tích:</b> Ta thấy <span class="m-tag">48 ⋮ 6</span> <i>(vì 48 = 6 . 8)</i>, <span class="m-tag">12 ⋮ 6</span> <i>(vì 12 = 6 . 2)</i> và <span class="m-tag">36 ⋮ 6</span> <i>(vì 36 = 6 . 6)</i>.</li>
-        <li><b>Kết luận:</b> Vì tất cả các thành phần trong biểu thức đều chia hết cho 6, nên theo Tính chất 1 mở rộng, <span class="m-tag">(48 + 12 - 36) ⋮ 6</span>.</li>
-      </ul>
-    </div>
-
-    <div class="sky-subbox">
-      <div class="sky-sub-heading">2.2. Tính chất 2: Trường hợp KHÔNG CHIA HẾT</div>
-      <p><b>Hoạt động khám phá 3:</b> Lấy một số chia hết cho 5 là <span class="m-tag">20</span> và một số không chia hết cho 5 là <span class="m-tag">12</span>. Xét tổng của chúng: <span class="m-tag">20 + 12 = 32</span>. Ta thấy <span class="m-tag">32 ∤ 5</span>.</p>
-      <div class="sky-alert">
-        <div class="sky-alert-title">TÍNH CHẤT 2 (MỘT SỐ LẺ LOI KHÔNG CHIA HẾT ➔ TỔNG KHÔNG CHIA HẾT)</div>
-        Nếu <b>chỉ có duy nhất một số hạng</b> của tổng không chia hết cho một số, còn <b>tất cả các số hạng khác đều chia hết</b> cho số đó thì <b>tổng đó KHÔNG chia hết</b> cho số đó.<br>
-        • <b>Công thức tổng quát:</b> Với <i>a, b, m ∈ ℕ</i> và <i>m ≠ 0</i>: Nếu <span class="m-tag">a ⋮ m</span> và <span class="m-tag">b ∤ m</span> thì <span class="m-tag">(a + b) ∤ m</span>
-      </div>
-      <p><b>Mở rộng Tính chất 2:</b></p>
-      <ul>
-        <li><b>Đối với phép trừ</b> <i>(điều kiện a &gt; b)</i>: Nếu <span class="m-tag">a ⋮ m</span> và <span class="m-tag">b ∤ m</span> thì <span class="m-tag">(a - b) ∤ m</span> <i>(hoặc ngược lại nếu <span class="m-tag">a ∤ m</span> và <span class="m-tag">b ⋮ m</span> thì <span class="m-tag">(a - b) ∤ m</span>)</i>.</li>
-        <li><b>Đối với nhiều số hạng:</b> Nếu <span class="m-tag">a ⋮ m</span>, <span class="m-tag">b ⋮ m</span> nhưng <span class="m-tag">c ∤ m</span> thì <span class="m-tag">(a + b + c) ∤ m</span>.</li>
-      </ul>
-
-      <div class="sky-alert sky-alert-danger">
-        <div class="sky-alert-title">CẢNH BÁO "BẪY" TOÁN HỌC THƯỜNG GẶP NHẤT!</div>
-        Tính chất 2 chỉ đúng khi có <b>DUY NHẤT MỘT</b> số hạng không chia hết. Nếu trong một tổng có <b>từ HAI số hạng trở lên không chia hết</b> cho <i>m</i>, ta <b>TUYỆT ĐỐI KHÔNG ĐƯỢC</b> kết luận ngay là tổng đó không chia hết cho <i>m</i>! Khi đó, các số dư của chúng có thể bù trừ cho nhau để tạo thành một số chia hết.
-        <ul>
-          <li><b>Ví dụ chứng minh:</b> Xét tổng <span class="m-tag">S = 16 + 13 + 7</span> với số chia là <span class="m-tag">4</span>.</li>
-          <li>Ta có: <span class="m-tag">16 ⋮ 4</span>, nhưng <span class="m-tag">13 ∤ 4</span> (dư 1) và <span class="m-tag">7 ∤ 4</span> (dư 3) ➔ Có tới <b>2 số hạng</b> không chia hết cho 4.</li>
-          <li>Nếu vội vàng kết luận <span class="m-tag">S ∤ 4</span> là <b>SAI</b>!</li>
-          <li><b>Cách làm đúng:</b> Nhóm hai số không chia hết lại với nhau: <span class="m-tag">S = 16 + (13 + 7) = 16 + 20</span>. Vì <span class="m-tag">16 ⋮ 4</span> và <span class="m-tag">20 ⋮ 4</span> nên tổng <span class="m-tag">(16 + 13 + 7) ⋮ 4</span>!</li>
-        </ul>
-      </div>
-
-      <p><b>TRẠM DỪNG THỰC HÀNH SỐ 2 (Giải quyết bài toán Khởi động):</b> Quay lại câu hỏi của bạn Việt ở đầu bài: Mẹ cho <b>12 gói kẹo</b>, mỗi gói <b>35 cái</b>. Việt lấy ra <b>2 gói kẹo</b> cất đi. Hỏi số kẹo còn lại có chia đều được cho <b>5 bạn</b> không?</p>
-      <details class="sky-details" onclick="sndClick()">
-        <summary>[ NHẤN VÀO ĐÂY ĐỂ XEM LỜI GIẢI KHOA HỌC ]</summary>
-        <div class="sky-details-body">
-          <ul>
-            <li><b>Bước 1:</b> Tổng số kẹo ban đầu là <span class="m-tag">12 . 35</span>. Vì thừa số <span class="m-tag">35 ⋮ 5</span> nên tích <span class="m-tag">(12 . 35) ⋮ 5</span>.</li>
-            <li><b>Bước 2:</b> Số kẹo Việt lấy ra cất đi là <span class="m-tag">2 . 35</span>. Vì <span class="m-tag">35 ⋮ 5</span> nên tích <span class="m-tag">(2 . 35) ⋮ 5</span>.</li>
-            <li><b>Bước 3:</b> Số kẹo còn lại là hiệu: <span class="m-tag">(12 . 35) - (2 . 35)</span>. Vì cả số bị trừ và số trừ đều chia hết cho 5, nên theo Tính chất 1 mở rộng, hiệu này <b>chia hết cho 5</b>.</li>
-            <li><b>Kết luận:</b> Số kẹo còn lại <b>hoàn toàn chia đều được cho 5 bạn</b> mà không cần tính tổng số kẹo!</li>
-          </ul>
-        </div>
-      </details>
-    </div>
-
+  <div class="sky-card-head">
+    <span>NỘI DUNG 3: TÍNH CHẤT CHIA HẾT CỦA MỘT TỔNG (VÀ HIỆU)</span>
+    <span class="sky-step-tag">Phần 3 / 4</span>
   </div>
-</div>
-
-<!-- KHUNG 5: ĐẤU TRƯỜNG TRÒ CHƠI TƯƠNG TÁC (CÓ ÂM THANH & NỐI CẶP) -->
-<div class="sky-card">
-  <div class="sky-card-header">ĐẤU TRƯỜNG TRÍ TUỆ: TRÒ CHƠI NỐI CẶP & TRẮC NGHIỆM CÓ ÂM THANH</div>
   <div class="sky-card-body">
 
-    <!-- VÒNG 1: TRÒ CHƠI NỐI CẶP -->
-    <div class="sky-subbox">
-      <div class="sky-sub-heading">VÒNG 1: TRÒ CHƠI NỐI CẶP TOÁN HỌC (40 ĐIỂM — 10 Điểm / Cặp)</div>
-      <p><b>Cách chơi:</b> Nhấn vào một thẻ ở <b>CỘT A</b>, sau đó nhấn vào thẻ kết quả tương ứng ở <b>CỘT B</b> để nối chúng với nhau. Có âm thanh báo đúng/sai ngay lập tức!</p>
-
-      <div class="match-container">
-        <div>
-          <div class="match-col-head">CỘT A: BIỂU THỨC / TẬP HỢP</div>
-          <div class="match-box" data-a="1" onclick="chooseA(this)">
-            <span>1. Tập hợp các ước của 18: Ư(18)</span>
-            <span class="match-tag" id="tagA-1"></span>
-          </div>
-          <div class="match-box" data-a="2" onclick="chooseA(this)">
-            <span>2. Tập hợp B(8) nhỏ hơn 35</span>
-            <span class="match-tag" id="tagA-2"></span>
-          </div>
-          <div class="match-box" data-a="3" onclick="chooseA(this)">
-            <span>3. Biểu thức: 42 + 56 - 14</span>
-            <span class="match-tag" id="tagA-3"></span>
-          </div>
-          <div class="match-box" data-a="4" onclick="chooseA(this)">
-            <span>4. Biểu thức: 24 + 36 + 15</span>
-            <span class="match-tag" id="tagA-4"></span>
-          </div>
+    <!-- LÝ THUYẾT NGẮN GỌN TRƯỚC TRẠM KHÁM PHÁ -->
+    <div class="sky-theory-box">
+      <div class="sky-theory-head">3. HAI TÍNH CHẤT CHIA HẾT TRỌNG TÂM</div>
+      <div class="sky-theory-grid">
+        <div class="sky-mini-card">
+          <div class="sky-mini-title">TÍNH CHẤT 1 (CÙNG CHIA HẾT ➔ CHIA HẾT)</div>
+          Nếu <b>tất cả các số hạng</b> của một tổng đều chia hết cho cùng một số thì <b>tổng đó chia hết</b> cho số đó:<br>
+          • <span class="s-tag">a ⋮ m</span> và <span class="s-tag">b ⋮ m</span> ➔ <span class="s-tag">(a + b) ⋮ m</span>.<br>
+          • <i>Mở rộng cho hiệu (a ≥ b) và nhiều số hạng:</i> Nếu <span class="s-tag">a ⋮ m, b ⋮ m, c ⋮ m</span> thì <span class="s-tag">(a + b - c) ⋮ m</span>.
         </div>
-
-        <div>
-          <div class="match-col-head">CỘT B: KẾT QUẢ TƯƠNG ỨNG</div>
-          <div class="match-box" data-b="3" onclick="chooseB(this)">
-            <span>a) Chia hết cho 7 (⋮ 7)</span>
-            <span class="match-tag" id="tagB-3"></span>
-          </div>
-          <div class="match-box" data-b="1" onclick="chooseB(this)">
-            <span>b) {1; 2; 3; 6; 9; 18}</span>
-            <span class="match-tag" id="tagB-1"></span>
-          </div>
-          <div class="match-box" data-b="4" onclick="chooseB(this)">
-            <span>c) Không chia hết cho 6 (∤ 6)</span>
-            <span class="match-tag" id="tagB-4"></span>
-          </div>
-          <div class="match-box" data-b="2" onclick="chooseB(this)">
-            <span>d) {0; 8; 16; 24; 32}</span>
-            <span class="match-tag" id="tagB-2"></span>
-          </div>
+        <div class="sky-mini-card">
+          <div class="sky-mini-title">TÍNH CHẤT 2 (MỘT SỐ KHÔNG CHIA HẾT ➔ KHÔNG CHIA HẾT)</div>
+          Nếu <b>chỉ có duy nhất một số hạng</b> của tổng không chia hết cho một số, còn các số hạng khác đều chia hết thì <b>tổng đó KHÔNG chia hết</b>:<br>
+          • <span class="s-tag">a ⋮ m</span> và <span class="s-tag">b ∤ m</span> ➔ <span class="s-tag">(a + b) ∤ m</span>.<br>
+          • <i>Mở rộng:</i> <span class="s-tag">a ⋮ m, b ⋮ m</span> nhưng <span class="s-tag">c ∤ m</span> ➔ <span class="s-tag">(a + b + c) ∤ m</span>.
         </div>
       </div>
-
-      <div id="matchNotice" style="margin-top: 12px; font-weight: 800; color: #0284c7;"></div>
-      <button class="btn-replay" onclick="replayMatch()">Chơi lại Vòng 1 (Nối cặp)</button>
-    </div>
-
-    <!-- VÒNG 2: TRẮC NGHIỆM CÓ ÂM THANH -->
-    <div class="sky-subbox">
-      <div class="sky-sub-heading">VÒNG 2: KHỞI ĐỘNG NHANH & TĂNG TỐC SUY LUẬN (60 ĐIỂM — 15 Điểm / Câu)</div>
-
-      <div class="quiz-box" id="qz-1">
-        <div class="quiz-title">Câu 1: Khẳng định nào dưới đây sử dụng SAI kí hiệu toán học?</div>
-        <div class="quiz-list">
-          <button class="quiz-opt" onclick="pickQuiz(1, this, false, 'Chưa đúng! Vì 42 = 6 . 7 nên 42 ⋮ 6 là một khẳng định ĐÚNG. Hãy tìm câu sai nhé!')">Phương án A: 42 ⋮ 6</button>
-          <button class="quiz-opt" onclick="pickQuiz(1, this, false, 'Chưa đúng! Vì 25 chia hết cho 5 nên 5 là một phần tử thuộc tập hợp ước của 25. Khẳng định này ĐÚNG.')">Phương án B: 5 ∈ Ư(25)</button>
-          <button class="quiz-opt" onclick="pickQuiz(1, this, true, 'CHÍNH XÁC (+15 Điểm)! Khẳng định này SAI vì không có phép chia cho số 0, do đó số 0 không bao giờ là ước của bất kì số tự nhiên nào! (Số 0 chỉ là bội của 15: 0 ∈ B(15)).')">Phương án C: 0 ∈ Ư(15)</button>
-        </div>
-        <div class="quiz-msg" id="qmsg-1"></div>
-      </div>
-
-      <div class="quiz-box" id="qz-2">
-        <div class="quiz-title">Câu 2: Tập hợp tất cả các số tự nhiên y thỏa mãn y ∈ Ư(50) và y &gt; 5 là:</div>
-        <div class="quiz-list">
-          <button class="quiz-opt" onclick="pickQuiz(2, this, false, 'Bị lừa rồi! Đề bài yêu cầu y > 5 (lớn hơn hẳn 5) nên không được lấy số 5 vào tập hợp nhé!')">Phương án A: {5; 10; 25; 50}</button>
-          <button class="quiz-opt" onclick="pickQuiz(2, this, true, 'XUẤT SẮC (+15 Điểm)! Ta có Ư(50) = {1; 2; 5; 10; 25; 50}. Lọc các phần tử lớn hơn 5, ta thu được tập hợp chuẩn xác là {10; 25; 50}.')">Phương án B: {10; 25; 50}</button>
-          <button class="quiz-opt" onclick="pickQuiz(2, this, false, 'Sai rồi! Số 20 không phải là ước của 50 vì 50 chia 20 được 2 dư 10 (50 ∤ 20).')">Phương án C: {10; 20; 25; 50}</button>
-        </div>
-        <div class="quiz-msg" id="qmsg-2"></div>
-      </div>
-
-      <div class="quiz-box" id="qz-3">
-        <div class="quiz-title">Câu 3: Không thực hiện phép tính, hãy cho biết trong các biểu thức (M = 80 + 16 + 28; N = 100 - 40; P = 64 + 32 + 19 + 5), biểu thức nào CHIA HẾT CHO 8?</div>
-        <div class="quiz-list">
-          <button class="quiz-opt" onclick="pickQuiz(3, this, false, 'Sai rồi! Trong biểu thức M có 80 ⋮ 8, 16 ⋮ 8 nhưng 28 ∤ 8 (dư 4). Theo Tính chất 2, M không chia hết cho 8.')">Phương án A: Chỉ có biểu thức M</button>
-          <button class="quiz-opt" onclick="pickQuiz(3, this, false, 'Chưa chính xác! Trong biểu thức N có 40 ⋮ 8 nhưng 100 ∤ 8 (100 = 8 . 12 + 4). Vậy (100 - 40) ∤ 8.')">Phương án B: Chỉ có biểu thức N</button>
-          <button class="quiz-opt" onclick="pickQuiz(3, this, true, 'ĐỈNH CAO TƯ DUY (+15 Điểm)! Trong P = 64 + 32 + 19 + 5, mặc dù 19 ∤ 8 và 5 ∤ 8, nhưng khi nhóm hai số này lại ta có (19 + 5) = 24 mà 24 ⋮ 8. Do đó tổng P chia hết cho 8!')">Phương án C: Chỉ có biểu thức P</button>
-        </div>
-        <div class="quiz-msg" id="qmsg-3"></div>
-      </div>
-
-      <div class="quiz-box" id="qz-4">
-        <div class="quiz-title">Câu 4: Cho tổng S = 35 + x. Tìm điều kiện của số tự nhiên x thuộc tập hợp {7; 14; 18; 21} để S ∤ 7 (S không chia hết cho 7):</div>
-        <div class="quiz-list">
-          <button class="quiz-opt" onclick="pickQuiz(4, this, false, 'Đọc kĩ đề nhé! Đề bài yêu cầu tìm x để tổng S KHÔNG chia hết cho 7 (S ∤ 7). Với x ∈ {7; 14; 21} thì tổng S sẽ chia hết cho 7 mất rồi!')">Phương án A: x ∈ {7; 14; 21}</button>
-          <button class="quiz-opt" onclick="pickQuiz(4, this, true, 'CHÍNH XÁC TUYỆT ĐỐI (+15 Điểm)! Ta có 35 ⋮ 7. Theo Tính chất 2, để tổng (35 + x) ∤ 7 thì số hạng x phải không chia hết cho 7 (x ∤ 7). Trong tập hợp đã cho, chỉ có duy nhất 18 ∤ 7. Vậy x = 18.')">Phương án B: x = 18</button>
-        </div>
-        <div class="quiz-msg" id="qmsg-4"></div>
+      <div class="sky-danger-strip">
+        <b>CẢNH BÁO "BẪY" TOÁN HỌC THƯỜNG GẶP NHẤT:</b><br>
+        Tính chất 2 chỉ đúng khi có <b>DUY NHẤT MỘT</b> số hạng không chia hết. Nếu trong tổng có <b>từ HAI số hạng trở lên không chia hết</b> cho <i>m</i>, ta <b>TUYỆT ĐỐI KHÔNG ĐƯỢC</b> vội kết luận tổng không chia hết, mà phải <b>nhóm các số không chia hết lại với nhau</b>!<br>
+        • <i>Ví dụ:</i> Xét <span class="s-tag">S = 16 + 13 + 7</span> với số chia <span class="s-tag">4</span>. Tuy <span class="s-tag">13 ∤ 4</span> và <span class="s-tag">7 ∤ 4</span>, nhưng khi nhóm <span class="s-tag">(13 + 7) = 20 ⋮ 4</span>, kết hợp với <span class="s-tag">16 ⋮ 4</span> nên tổng <span class="s-tag">(16 + 13 + 7) ⋮ 4</span>!
       </div>
     </div>
 
-    <!-- VÒNG 3: TỰ LUẬN & TOÁN THỰC TẾ -->
-    <div class="sky-subbox">
-      <div class="sky-sub-heading">VÒNG 3: CHINH PHỤC TỰ LUẬN & TOÁN THỰC TẾ (40 Điểm — Làm vào vở)</div>
+    <!-- TRẠM KHÁM PHÁ 3 -->
+    <div class="sky-quest-box">
+      <div class="sky-quest-title">TRẠM KHÁM PHÁ 3: PHÂN LOẠI NHANH BIỂU THỨC TRONG 3 GIÂY (+15 ĐIỂM)</div>
+      <p><b>Nhiệm vụ:</b> Không cần tính tổng, hãy bấm chọn khẳng định <b>Chia hết</b> hoặc <b>Không chia hết</b> cho mỗi biểu thức dưới đây:</p>
+
+      <div class="sort-item" id="sbox-1">
+        <div class="sort-expr">1) Biểu thức A = 48 + 12 - 36 (Xét với số 6)</div>
+        <div class="sort-btns">
+          <button class="s-btn" onclick="sortCheck(1, this, true, 'Chính xác (+5 Điểm)! Vì 48 ⋮ 6, 12 ⋮ 6 và 36 ⋮ 6 nên theo Tính chất 1 mở rộng, A ⋮ 6.')">Chia hết (⋮ 6)</button>
+          <button class="s-btn" onclick="sortCheck(1, this, false, 'Nhầm rồi! Cả 3 số 48, 12, 36 đều chia hết cho 6 nên biểu thức A phải chia hết cho 6.')">Không chia hết (∤ 6)</button>
+        </div>
+        <div class="sort-fb" id="sfb-1"></div>
+      </div>
+
+      <div class="sort-item" id="sbox-2">
+        <div class="sort-expr">2) Biểu thức B = 80 + 16 + 28 (Xét với số 8)</div>
+        <div class="sort-btns">
+          <button class="s-btn" onclick="sortCheck(2, this, false, 'Sai rồi! Có 80 ⋮ 8 và 16 ⋮ 8, nhưng duy nhất số 28 ∤ 8 (dư 4) nên B không chia hết cho 8.')">Chia hết (⋮ 8)</button>
+          <button class="s-btn" onclick="sortCheck(2, this, true, 'Chính xác (+5 Điểm)! Vì 80 ⋮ 8, 16 ⋮ 8 nhưng chỉ có duy nhất 28 ∤ 8 nên theo Tính chất 2, B ∤ 8.')">Không chia hết (∤ 8)</button>
+        </div>
+        <div class="sort-fb" id="sfb-2"></div>
+      </div>
+
+      <div class="sort-item" id="sbox-3" style="margin-bottom:0;">
+        <div class="sort-expr">3) Biểu thức P = 64 + 32 + 19 + 5 (Xét với số 8)</div>
+        <div class="sort-btns">
+          <button class="s-btn" onclick="sortCheck(3, this, true, 'ĐỈNH CAO (+5 Điểm)! Bạn đã vượt qua bẫy! Nhóm hai số không chia hết lại: (19 + 5) = 24 ⋮ 8. Do đó P ⋮ 8!')">Chia hết (⋮ 8)</button>
+          <button class="s-btn" onclick="sortCheck(3, this, false, 'Mắc bẫy rồi! Có tới 2 số không chia hết cho 8 là 19 và 5. Khi nhóm (19 + 5) = 24 lại chia hết cho 8 đấy!')">Không chia hết (∤ 8)</button>
+        </div>
+        <div class="sort-fb" id="sfb-3"></div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- NỘI DUNG 4: ĐẤU TRƯỜNG TRÍ TUỆ & BÀI TOÁN THỰC TIỄN -->
+<div class="sky-card">
+  <div class="sky-card-head">
+    <span>NỘI DUNG 4: ĐẤU TRƯỜNG NỐI CẶP, TRẮC NGHIỆM & TOÁN THỰC TẾ</span>
+    <span class="sky-step-tag">Phần 4 / 4</span>
+  </div>
+  <div class="sky-card-body">
+
+    <!-- VÒNG 1: TRÒ CHƠI NỐI CẶP (20 ĐIỂM) -->
+    <div class="sky-quest-box" style="margin-bottom:20px;">
+      <div class="sky-quest-title">VÒNG 1: GHÉP NỐI TỐC ĐỘ (20 ĐIỂM — 5 Điểm / Cặp)</div>
+      <p><b>Cách chơi:</b> Nhấn chọn một biểu thức hoặc tập hợp ở <b>CỘT A</b>, sau đó nhấn chọn kết quả tương ứng ở <b>CỘT B</b> để nối chúng lại với nhau.</p>
+
+      <div class="match-grid">
+        <div>
+          <div class="match-head">CỘT A: MỆNH ĐỀ / TẬP HỢP</div>
+          <div class="m-card" data-a="1" onclick="selA(this)">
+            <span>1. Tập hợp các ước của 12: Ư(12)</span>
+            <span class="m-badge" id="bA-1"></span>
+          </div>
+          <div class="m-card" data-a="2" onclick="selA(this)">
+            <span>2. Tập hợp B(9) nhỏ hơn 30</span>
+            <span class="m-badge" id="bA-2"></span>
+          </div>
+          <div class="m-card" data-a="3" onclick="selA(this)">
+            <span>3. Tổng (219 . 7 + 8)</span>
+            <span class="m-badge" id="bA-3"></span>
+          </div>
+          <div class="m-card" data-a="4" onclick="selA(this)">
+            <span>4. Tổng (8 . 12 + 9)</span>
+            <span class="m-badge" id="bA-4"></span>
+          </div>
+        </div>
+
+        <div>
+          <div class="match-head">CỘT B: KẾT QUẢ TƯƠNG ỨNG</div>
+          <div class="m-card" data-b="3" onclick="selB(this)">
+            <span>a) Không chia hết cho 7 (vì 8 ∤ 7)</span>
+            <span class="m-badge" id="bB-3"></span>
+          </div>
+          <div class="m-card" data-b="1" onclick="selB(this)">
+            <span>b) {1; 2; 3; 4; 6; 12}</span>
+            <span class="m-badge" id="bB-1"></span>
+          </div>
+          <div class="m-card" data-b="4" onclick="selB(this)">
+            <span>c) Chia hết cho 3 (vì 12 ⋮ 3 và 9 ⋮ 3)</span>
+            <span class="m-badge" id="bB-4"></span>
+          </div>
+          <div class="m-card" data-b="2" onclick="selB(this)">
+            <span>d) {0; 9; 18; 27}</span>
+            <span class="m-badge" id="bB-2"></span>
+          </div>
+        </div>
+      </div>
+
+      <div id="matchMsg" style="margin-top:8px; font-weight:800; color:#0369a1;"></div>
+      <button class="sky-btn" style="margin-top:8px;" onclick="resetMatching()">Chơi lại Vòng 1</button>
+    </div>
+
+    <!-- VÒNG 2: TRẮC NGHIỆM PHẢN XẠ (30 ĐIỂM) -->
+    <div class="sky-quest-box" style="margin-bottom:20px;">
+      <div class="sky-quest-title">VÒNG 2: TĂNG TỐC SUY LUẬN (30 ĐIỂM — 10 Điểm / Câu)</div>
+
+      <div class="q-card" id="qc-1">
+        <div class="q-title">Câu 1: Khẳng định nào dưới đây sử dụng SAI kí hiệu toán học?</div>
+        <div class="q-opts">
+          <button class="q-btn" onclick="ansQuiz(1, this, false, 'Chưa đúng! Vì 42 = 6 . 7 nên 42 ⋮ 6 là một khẳng định ĐÚNG. Hãy tìm câu sai nhé!')">A. 42 ⋮ 6</button>
+          <button class="q-btn" onclick="ansQuiz(1, this, false, 'Chưa đúng! Vì 25 chia hết cho 5 nên 5 ∈ Ư(25) là một khẳng định ĐÚNG.')">B. 5 ∈ Ư(25)</button>
+          <button class="q-btn" onclick="ansQuiz(1, this, true, 'CHÍNH XÁC (+10 Điểm)! Khẳng định này SAI vì không có phép chia cho 0, do đó số 0 không bao giờ là ước của bất kì số tự nhiên nào!')">C. 0 ∈ Ư(15)</button>
+        </div>
+        <div class="q-exp" id="qexp-1"></div>
+      </div>
+
+      <div class="q-card" id="qc-2">
+        <div class="q-title">Câu 2: Tập hợp tất cả các số tự nhiên y thỏa mãn y ∈ Ư(50) và y &gt; 5 là:</div>
+        <div class="q-opts">
+          <button class="q-btn" onclick="ansQuiz(2, this, false, 'Bị lừa rồi! Đề bài yêu cầu y > 5 (lớn hơn hẳn 5) nên không được lấy số 5 vào tập hợp nhé!')">A. {5; 10; 25; 50}</button>
+          <button class="q-btn" onclick="ansQuiz(2, this, true, 'XUẤT SẮC (+10 Điểm)! Ta có Ư(50) = {1; 2; 5; 10; 25; 50}. Lọc các phần tử lớn hơn 5 ta được {10; 25; 50}.')">B. {10; 25; 50}</button>
+          <button class="q-btn" onclick="ansQuiz(2, this, false, 'Sai rồi! Số 20 không phải là ước của 50 vì 50 chia 20 được 2 dư 10.')">C. {10; 20; 25; 50}</button>
+        </div>
+        <div class="q-exp" id="qexp-2"></div>
+      </div>
+
+      <div class="q-card" id="qc-3" style="margin-bottom:0;">
+        <div class="q-title">Câu 3: Cho tổng S = 35 + x. Tìm giá trị của x thuộc tập hợp {7; 14; 18; 21} để S ∤ 7 (S không chia hết cho 7):</div>
+        <div class="q-opts">
+          <button class="q-btn" onclick="ansQuiz(3, this, false, 'Đọc kĩ đề nhé! Đề yêu cầu tìm x để S KHÔNG chia hết cho 7. Với x ∈ {7; 14; 21} thì S chia hết cho 7 mất rồi!')">A. x ∈ {7; 14; 21}</button>
+          <button class="q-btn" onclick="ansQuiz(3, this, true, 'CHÍNH XÁC TUYỆT ĐỐI (+10 Điểm)! Vì 35 ⋮ 7 nên để (35 + x) ∤ 7 thì x phải không chia hết cho 7. Chỉ có 18 ∤ 7.')">B. x = 18</button>
+          <button class="q-btn" onclick="ansQuiz(3, this, false, 'Sai rồi! Số 14 chia hết cho 7 nên 35 + 14 chia hết cho 7.')">C. x = 14</button>
+        </div>
+        <div class="q-exp" id="qexp-3"></div>
+      </div>
+    </div>
+
+    <!-- VÒNG 3: BÀI TOÁN TỰ LUẬN & THỰC TIỄN -->
+    <div class="sky-quest-box" style="margin-bottom:0;">
+      <div class="sky-quest-title">VÒNG 3: CHINH PHỤC TOÁN THỰC TIỄN & NÂNG CAO (LÀM VÀO VỞ)</div>
       <ul>
-        <li><b>Bài tập 1 (Nhận diện tính chất trong biểu thức chứa tích):</b><br>Xét xem các khẳng định sau là Đúng hay Sai và giải thích rõ lí do:<br>a) <span class="m-tag">(219 . 7 + 8)</span> chia hết cho 7.<br>b) <span class="m-tag">(8 . 12 + 9)</span> chia hết cho 3.</li>
-        <li><b>Bài tập 2 (Bài toán chia nhóm dự án - SGK Toán 6):</b><br>Một lớp học có <b>40 học sinh</b>. Giáo viên muốn chia lớp thành các nhóm có số người như nhau để thực hiện dự án học tập. Biết rằng mỗi nhóm phải có <b>nhiều hơn 3 người</b> và <b>ít hơn 15 người</b>. Hỏi có thể chia lớp thành mấy nhóm và mỗi nhóm có bao nhiêu học sinh?</li>
-        <li><b>Bài tập 3 (Thử thách nâng cao dành cho học sinh giỏi):</b><br>Tìm tất cả các số tự nhiên <i>n</i> sao cho <span class="m-tag">(n + 8) ⋮ (n + 3)</span>.</li>
+        <li><b>Bài toán 1 (Bài toán gói kẹo thực tiễn):</b> Nhân dịp sinh nhật, mẹ chuẩn bị cho Việt <b>12 gói kẹo</b>, mỗi gói có <b>35 cái kẹo</b>. Việt lấy ra <b>2 gói kẹo</b> cất đi. Không tính tổng số kẹo, hãy giải thích vì sao số kẹo còn lại hoàn toàn chia đều được cho <b>5 bạn</b>?</li>
+        <li><b>Bài toán 2 (Chia nhóm dự án - SGK trang 33):</b> Một lớp học có <b>40 học sinh</b>. Cô giáo muốn chia lớp thành các nhóm có số người như nhau để làm dự án. Biết mỗi nhóm phải có <b>nhiều hơn 3 người</b> và <b>ít hơn 15 người</b>. Hỏi mỗi nhóm có thể có bao nhiêu học sinh?</li>
+        <li><b>Bài toán 3 (Thử thách nâng cao):</b> Tìm tất cả các số tự nhiên <i>n</i> sao cho <span class="s-tag">(n + 8) ⋮ (n + 3)</span>.</li>
       </ul>
 
-      <details class="sky-details" onclick="sndClick()">
-        <summary>[ MỞ KHÓA HƯỚNG DẪN GIẢI VÀ THANG ĐIỂM TỰ CHẤM VÒNG 3 ]</summary>
+      <details class="sky-details" onclick="sfxClick()">
+        <summary>[ NHẤN ĐỂ MỞ KHÓA LỜI GIẢI TRÌNH BÀY MẪU VÒNG 3 ]</summary>
         <div class="sky-details-body">
-          <p><b>Lời giải Bài tập 1 (10 Điểm):</b></p>
+          <p><b>Lời giải Bài toán 1:</b></p>
           <ul>
-            <li><b>a) Khẳng định SAI.</b> Vì <span class="m-tag">7 ⋮ 7</span> nên tích <span class="m-tag">(219 . 7) ⋮ 7</span>. Tuy nhiên, số hạng thứ hai là <span class="m-tag">8 ∤ 7</span>. Theo Tính chất 2, tổng <span class="m-tag">(219 . 7 + 8) ∤ 7</span>.</li>
-            <li><b>b) Khẳng định ĐÚNG.</b> Trong tích <span class="m-tag">(8 . 12)</span> có thừa số <span class="m-tag">12 ⋮ 3</span> nên tích <span class="m-tag">(8 . 12) ⋮ 3</span>. Mặt khác, số hạng thứ hai là <span class="m-tag">9 ⋮ 3</span>. Theo Tính chất 1, tổng <span class="m-tag">(8 . 12 + 9) ⋮ 3</span>.</li>
+            <li>Tổng số kẹo ban đầu là <span class="s-tag">12 . 35</span>. Vì <span class="s-tag">35 ⋮ 5</span> nên tích <span class="s-tag">(12 . 35) ⋮ 5</span>.</li>
+            <li>Số kẹo Việt cất đi là <span class="s-tag">2 . 35</span>. Vì <span class="s-tag">35 ⋮ 5</span> nên tích <span class="s-tag">(2 . 35) ⋮ 5</span>.</li>
+            <li>Số kẹo còn lại là hiệu <span class="s-tag">(12 . 35) - (2 . 35)</span>. Theo Tính chất 1 mở rộng, hiệu này <b>chia hết cho 5</b> nên chia đều được cho 5 bạn!</li>
           </ul>
-          <hr>
-          <p><b>Lời giải Bài tập 2 (15 Điểm):</b></p>
+          <hr style="margin:12px 0; border:0; border-top:1px solid #bae6fd;">
+          <p><b>Lời giải Bài toán 2:</b></p>
           <ul>
-            <li>Gọi số học sinh trong mỗi nhóm là <i>x</i> (điều kiện: <i>x ∈ ℕ*</i> và <b>3 &lt; <i>x</i> &lt; 15</b>).</li>
-            <li>Vì 40 học sinh được chia đều vào các nhóm không dư bạn nào nên <span class="m-tag">40 ⋮ x</span>, suy ra <span class="m-tag">x ∈ Ư(40)</span>.</li>
-            <li>Ta tìm tập hợp các ước của 40 bằng phương pháp cặp nhân: <span class="m-tag">Ư(40) = {1; 2; 4; 5; 8; 10; 20; 40}</span>.</li>
-            <li>Kết hợp với điều kiện <b>3 &lt; <i>x</i> &lt; 15</b>, ta chọn được các giá trị thỏa mãn là: <span class="m-tag">x ∈ {4; 5; 8; 10}</span>.</li>
+            <li>Gọi số học sinh trong mỗi nhóm là <i>x</i> (điều kiện: <span class="s-tag">x ∈ ℕ*</span> và <span class="s-tag">3 &lt; x &lt; 15</span>).</li>
+            <li>Vì 40 học sinh chia đều vào các nhóm nên <span class="s-tag">40 ⋮ x</span>, suy ra <span class="s-tag">x ∈ Ư(40) = {1; 2; 4; 5; 8; 10; 20; 40}</span>.</li>
+            <li>Kết hợp điều kiện <span class="s-tag">3 &lt; x &lt; 15</span>, ta tìm được 4 phương án cho số học sinh mỗi nhóm là: <span class="s-tag">x ∈ {4; 5; 8; 10}</span> (tương ứng với 10 nhóm, 8 nhóm, 5 nhóm hoặc 4 nhóm).</li>
           </ul>
-          <table class="sky-table">
-            <thead>
-              <tr>
-                <th>Phương án</th>
-                <th>Số học sinh mỗi nhóm (x)</th>
-                <th>Số nhóm tương ứng (40 : x)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td><b>Cách 1</b></td><td><b>4</b> học sinh</td><td><span class="m-tag">40 : 4</span> = <b>10 nhóm</b></td></tr>
-              <tr><td><b>Cách 2</b></td><td><b>5</b> học sinh</td><td><span class="m-tag">40 : 5</span> = <b>8 nhóm</b></td></tr>
-              <tr><td><b>Cách 3</b></td><td><b>8</b> học sinh</td><td><span class="m-tag">40 : 8</span> = <b>5 nhóm</b></td></tr>
-              <tr><td><b>Cách 4</b></td><td><b>10</b> học sinh</td><td><span class="m-tag">40 : 10</span> = <b>4 nhóm</b></td></tr>
-            </tbody>
-          </table>
-          <hr>
-          <p><b>Lời giải Bài tập 3 - Nâng cao (15 Điểm):</b></p>
+          <hr style="margin:12px 0; border:0; border-top:1px solid #bae6fd;">
+          <p><b>Lời giải Bài toán 3 (Nâng cao):</b></p>
           <ul>
-            <li><b>Phương pháp tách số:</b> Ta biến đổi biểu thức bị chia <span class="m-tag">(n + 8)</span> sao cho xuất hiện biểu thức chia <span class="m-tag">(n + 3)</span>: Ta có <span class="m-tag">n + 8 = (n + 3) + 5</span>.</li>
-            <li>Vì bản thân số hạng <span class="m-tag">(n + 3) ⋮ (n + 3)</span> với mọi số tự nhiên <i>n</i>, nên theo Tính chất 1 và 2, để tổng <span class="m-tag">[(n + 3) + 5] ⋮ (n + 3)</span> thì số hạng còn lại là <b>5 phải chia hết cho <span class="m-tag">(n + 3)</span></b>, tức là: <span class="m-tag">5 ⋮ (n + 3)</span> hay <span class="m-tag">(n + 3) ∈ Ư(5)</span>.</li>
-            <li>Mà <span class="m-tag">Ư(5) = {1; 5}</span>. Vì <i>n</i> là số tự nhiên (<i>n ≥ 0</i>) nên <span class="m-tag">n + 3 ≥ 3</span>.</li>
-            <li>Đối chiếu với tập hợp <span class="m-tag">Ư(5)</span>, chỉ có giá trị <span class="m-tag">n + 3 = 5</span> thỏa mãn (loại trường hợp <span class="m-tag">n + 3 = 1</span>).</li>
-            <li>Từ <span class="m-tag">n + 3 = 5</span>, suy ra <span class="m-tag">n = 5 - 3 = 2</span>.</li>
-            <li><b>Kết luận:</b> Vậy <span class="m-tag">n = 2</span> <i>(Thử lại: với n = 2 thì n + 8 = 10, n + 3 = 5, ta có 10 ⋮ 5 — hoàn toàn chính xác!)</i>.</li>
+            <li>Tách số bị chia: <span class="s-tag">n + 8 = (n + 3) + 5</span>.</li>
+            <li>Vì <span class="s-tag">(n + 3) ⋮ (n + 3)</span> nên để tổng <span class="s-tag">[(n + 3) + 5] ⋮ (n + 3)</span> thì <span class="s-tag">5 ⋮ (n + 3)</span> hay <span class="s-tag">(n + 3) ∈ Ư(5) = {1; 5}</span>.</li>
+            <li>Do <span class="s-tag">n ≥ 0</span> nên <span class="s-tag">n + 3 ≥ 3</span> ➔ Chọn <span class="s-tag">n + 3 = 5</span>, suy ra <span class="s-tag">n = 2</span>.</li>
           </ul>
         </div>
       </details>
@@ -459,33 +454,34 @@
   </div>
 </div>
 
-<!-- KHUNG 6: SƠ ĐỒ TỔNG KẾT KIẾN THỨC CỐT LÕI -->
-<div class="sky-card">
-  <div class="sky-card-header">SƠ ĐỒ TỔNG KẾT KIẾN THỨC CỐT LÕI (DÀNH CHO ÔN THI)</div>
+<!-- BẢNG TÓM TẮT CỐT LÕI BÀI 8 -->
+<div class="sky-card" style="margin-bottom:0;">
+  <div class="sky-card-head">
+    <span>SƠ ĐỒ TỔNG KẾT KIẾN THỨC CỐT LÕI BÀI 8</span>
+    <span class="sky-step-tag">Ôn tập nhanh</span>
+  </div>
   <div class="sky-card-body">
     <table class="sky-table">
       <thead>
         <tr>
-          <th colspan="2" style="text-align:center; font-size:1.05rem;">
-            TRỌNG TÂM: QUAN HỆ CHIA HẾT — a = b . k (với a, b ∈ ℕ; b ≠ 0) ➔ a ⋮ b
-          </th>
+          <th width="50%">NHÁNH 1: KHÁI NIỆM ƯỚC & BỘI (<span class="s-tag">a = b . k ➔ a ⋮ b</span>)</th>
+          <th width="50%">NHÁNH 2: TÍNH CHẤT CHIA HẾT CỦA TỔNG & HIỆU</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td width="50%">
-            <b>NHÁNH 1: KHÁI NIỆM ƯỚC & BỘI</b>
-            <ul>
-              <li><b>a là BỘI của b</b> — Kí hiệu: <span class="m-tag">B(b)</span><br>➔ <i>Cách tìm:</i> Nhân <i>b</i> lần lượt với <span class="m-tag">0, 1, 2, 3, ...</span> (Tập hợp vô hạn).</li>
-              <li><b>b là ƯỚC của a</b> — Kí hiệu: <span class="m-tag">Ư(a)</span><br>➔ <i>Cách tìm:</i> Chia <i>a</i> lần lượt cho <span class="m-tag">1, 2, ..., a</span> (Tập hợp hữu hạn).<br><i>(Mẹo: Dùng phương pháp ghép cặp nhân đối xứng từ ngoài vào trong để không bao giờ bị sót nghiệm).</i></li>
-            </ul>
+          <td>
+            • <b><i>a</i> là BỘI của <i>b</i></b> — Kí hiệu: <span class="s-tag">B(b)</span><br>
+            ➔ <i>Cách tìm:</i> Nhân <i>b</i> lần lượt với <span class="s-tag">0, 1, 2, 3, ...</span> (Tập hợp vô hạn).<br><br>
+            • <b><i>b</i> là ƯỚC của <i>a</i></b> — Kí hiệu: <span class="s-tag">Ư(a)</span><br>
+            ➔ <i>Cách tìm:</i> Chia <i>a</i> lần lượt cho <span class="s-tag">1, 2, ..., a</span> hoặc ghép cặp nhân đối xứng (Tập hợp hữu hạn).
           </td>
-          <td width="50%">
-            <b>NHÁNH 2: TÍNH CHẤT CHIA HẾT CỦA TỔNG VÀ HIỆU</b>
-            <ul>
-              <li><b>Tính chất 1 (Trường hợp cùng chia hết):</b><br>Nếu <span class="m-tag">a ⋮ m</span> và <span class="m-tag">b ⋮ m</span> thì:<br>➔ <span class="m-tag">(a + b) ⋮ m</span> và <span class="m-tag">(a - b) ⋮ m</span> <i>(với điều kiện a ≥ b)</i>.</li>
-              <li><b>Tính chất 2 (Trường hợp chỉ có một số không chia hết):</b><br>Nếu <span class="m-tag">a ⋮ m</span> và <span class="m-tag">b ∤ m</span> thì:<br>➔ <span class="m-tag">(a + b) ∤ m</span> và <span class="m-tag">(a - b) ∤ m</span> <i>(với điều kiện a &gt; b)</i>.<br><i>(Cảnh báo: Nếu có từ 2 số hạng trở lên không chia hết, tuyệt đối không dùng tính chất 2).</i></li>
-            </ul>
+          <td>
+            • <b>Tính chất 1 (Cùng chia hết):</b><br>
+            Nếu <span class="s-tag">a ⋮ m</span> và <span class="s-tag">b ⋮ m</span> thì <span class="s-tag">(a + b) ⋮ m</span> và <span class="s-tag">(a - b) ⋮ m</span>.<br><br>
+            • <b>Tính chất 2 (Duy nhất 1 số không chia hết):</b><br>
+            Nếu <span class="s-tag">a ⋮ m</span> và <span class="s-tag">b ∤ m</span> thì <span class="s-tag">(a + b) ∤ m</span> và <span class="s-tag">(a - b) ∤ m</span>.<br>
+            <i>(Lưu ý: Có từ 2 số hạng không chia hết trở lên thì phải nhóm lại, không dùng Tính chất 2).</i>
           </td>
         </tr>
       </tbody>
@@ -494,132 +490,198 @@
 </div>
 
 <script>
-  // BỘ PHÁT ÂM THANH TỰ ĐỘNG (WEB AUDIO API)
-  let isSoundOn = true;
+  // HỆ THỐNG ÂM THANH TỰ ĐỘNG (WEB AUDIO API)
+  let soundOn = true;
   const AudioCtx = window.AudioContext || window.webkitAudioContext;
   let actx = null;
 
-  function initCtx() {
+  function initAudio() {
     if (!actx) actx = new AudioCtx();
     if (actx.state === 'suspended') actx.resume();
   }
 
-  function tone(freq, type, dur, delay = 0) {
-    if (!isSoundOn) return;
-    initCtx();
+  function playNote(freq, type, dur, delay = 0) {
+    if (!soundOn) return;
+    initAudio();
     setTimeout(() => {
-      const o = actx.createOscillator();
-      const g = actx.createGain();
-      o.type = type;
-      o.frequency.setValueAtTime(freq, actx.currentTime);
-      g.gain.setValueAtTime(0.18, actx.currentTime);
-      g.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + dur);
-      o.connect(g);
-      g.connect(actx.destination);
-      o.start();
-      o.stop(actx.currentTime + dur);
+      const osc = actx.createOscillator();
+      const gain = actx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, actx.currentTime);
+      gain.gain.setValueAtTime(0.18, actx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + dur);
+      osc.connect(gain);
+      gain.connect(actx.destination);
+      osc.start();
+      osc.stop(actx.currentTime + dur);
     }, delay);
   }
 
-  function sndClick() { tone(540, 'sine', 0.07); }
-  function sndRight() { tone(587.33, 'triangle', 0.14, 0); tone(880, 'triangle', 0.28, 110); }
-  function sndWrong() { tone(210, 'sawtooth', 0.16, 0); tone(165, 'sawtooth', 0.24, 140); }
-  function sndWin() {
-    tone(523.25, 'triangle', 0.14, 0);
-    tone(659.25, 'triangle', 0.14, 120);
-    tone(783.99, 'triangle', 0.14, 240);
-    tone(1046.50, 'triangle', 0.40, 360);
+  function sfxClick() { playNote(560, 'sine', 0.07); }
+  function sfxOk() { playNote(587.33, 'triangle', 0.13, 0); playNote(880, 'triangle', 0.26, 110); }
+  function sfxErr() { playNote(210, 'sawtooth', 0.15, 0); playNote(165, 'sawtooth', 0.22, 130); }
+  function sfxWin() {
+    playNote(523.25, 'triangle', 0.13, 0);
+    playNote(659.25, 'triangle', 0.13, 120);
+    playNote(783.99, 'triangle', 0.13, 240);
+    playNote(1046.50, 'triangle', 0.38, 360);
   }
 
-  function switchSound() {
-    isSoundOn = !isSoundOn;
-    document.getElementById('btnAudio').textContent = isSoundOn ? 'Âm thanh: ĐANG BẬT' : 'Âm thanh: ĐÃ TẮT';
-    if (isSoundOn) sndClick();
+  function toggleSound() {
+    soundOn = !soundOn;
+    document.getElementById('btnSound').textContent = soundOn ? 'Âm thanh: ĐANG BẬT' : 'Âm thanh: ĐÃ TẮT';
+    if (soundOn) sfxClick();
   }
 
-  let curScore = 0;
-  function addPts(pts) {
-    curScore += pts;
-    document.getElementById('scoreVal').textContent = curScore;
-    if (curScore === 100) setTimeout(sndWin, 350);
+  // ĐIỂM SỐ (TỔNG 100 ĐIỂM)
+  let totalPts = 0;
+  function addScore(val) {
+    totalPts += val;
+    document.getElementById('ptsVal').textContent = totalPts;
+    if (totalPts === 100) setTimeout(sfxWin, 300);
   }
 
-  // VÒNG 1: NỐI CẶP
-  let pickedA = null;
-  let matchedPairs = 0;
-
-  function chooseA(el) {
-    if (el.classList.contains('matched')) return;
-    sndClick();
-    document.querySelectorAll('[data-a]').forEach(x => x.classList.remove('selected'));
-    el.classList.add('selected');
-    pickedA = el;
-  }
-
-  function chooseB(el) {
-    if (el.classList.contains('matched') || !pickedA) return;
-    const aVal = pickedA.getAttribute('data-a');
-    const bVal = el.getAttribute('data-b');
-
-    if (aVal === bVal) {
-      sndRight();
-      pickedA.classList.remove('selected');
-      pickedA.classList.add('matched');
-      el.classList.add('matched');
-      document.getElementById('tagA-' + aVal).textContent = 'Cặp #' + aVal;
-      document.getElementById('tagB-' + bVal).textContent = 'Cặp #' + aVal;
-      pickedA = null;
-      matchedPairs++;
-      addPts(10);
-      if (matchedPairs === 4) {
-        document.getElementById('matchNotice').textContent = 'XUẤT SẮC! Bạn đã nối đúng toàn bộ 4 cặp kiến thức (+40 Điểm)!';
-        sndWin();
+  // LOGIC TRẠM 1: SĂN TẬP HỢP Ư(18) (15 ĐIỂM)
+  let foundU18 = 0;
+  let doneU18 = false;
+  function pickU18(el, isRight, msg) {
+    if (el.classList.contains('correct') || el.classList.contains('wrong') || doneU18) return;
+    const box = document.getElementById('msgU18');
+    box.textContent = msg;
+    if (isRight) {
+      sfxOk();
+      el.classList.add('correct');
+      box.style.color = '#0369a1';
+      foundU18++;
+      if (foundU18 === 6) {
+        doneU18 = true;
+        addScore(15);
+        box.textContent = 'HOÀN HẢO (+15 Điểm)! Bạn đã tìm đủ 6 ước của 18: Ư(18) = {1; 2; 3; 6; 9; 18}.';
       }
     } else {
-      sndWrong();
-      const tmp = pickedA;
+      sfxErr();
+      el.classList.add('wrong');
+      box.style.color = '#9f1239';
+    }
+  }
+
+  // LOGIC TRẠM 2: PHÒNG THÍ NGHIỆM ƯỚC & BỘI (20 ĐIỂM)
+  const labDone = {};
+  function checkLab(id, expected, okMsg) {
+    if (labDone[id]) return;
+    const val = parseInt(document.getElementById('inpLab' + id).value, 10);
+    const fb = document.getElementById('msgLab' + id);
+    if (val === expected) {
+      sfxOk();
+      fb.style.color = '#166534';
+      fb.textContent = okMsg + ' (+10 Điểm)';
+      labDone[id] = true;
+      addScore(10);
+    } else {
+      sfxErr();
+      fb.style.color = '#9f1239';
+      fb.textContent = 'Chưa chính xác, hãy kiểm tra lại phép nhân nhé!';
+    }
+  }
+
+  // LOGIC TRẠM 3: PHÂN LOẠI NHANH BIỂU THỨC (15 ĐIỂM — 3 CÂU x 5 ĐIỂM)
+  const sortLocked = {};
+  function sortCheck(id, btn, isOk, msg) {
+    if (sortLocked[id]) return;
+    const fb = document.getElementById('sfb-' + id);
+    fb.style.display = 'block';
+    fb.textContent = msg;
+    if (isOk) {
+      sfxOk();
+      btn.classList.add('ok');
+      fb.style.background = '#dcfce7';
+      fb.style.color = '#166534';
+      fb.style.border = '1px solid #16a34a';
+      sortLocked[id] = true;
+      addScore(5);
+      document.querySelectorAll('#sbox-' + id + ' .s-btn').forEach(b => b.disabled = true);
+    } else {
+      sfxErr();
+      btn.classList.add('err');
+      fb.style.background = '#ffe4e6';
+      fb.style.color = '#9f1239';
+      fb.style.border = '1px solid #e11d48';
+    }
+  }
+
+  // LOGIC VÒNG 1: NỐI CẶP (20 ĐIỂM — 4 CẶP x 5 ĐIỂM)
+  let currA = null;
+  let pairsCount = 0;
+  function selA(el) {
+    if (el.classList.contains('matched')) return;
+    sfxClick();
+    document.querySelectorAll('[data-a]').forEach(x => x.classList.remove('selected'));
+    el.classList.add('selected');
+    currA = el;
+  }
+
+  function selB(el) {
+    if (el.classList.contains('matched') || !currA) return;
+    const aId = currA.getAttribute('data-a');
+    const bId = el.getAttribute('data-b');
+    if (aId === bId) {
+      sfxOk();
+      currA.classList.remove('selected');
+      currA.classList.add('matched');
+      el.classList.add('matched');
+      document.getElementById('bA-' + aId).textContent = 'Cặp #' + aId;
+      document.getElementById('bB-' + bId).textContent = 'Cặp #' + aId;
+      currA = null;
+      pairsCount++;
+      addScore(5);
+      if (pairsCount === 4) {
+        document.getElementById('matchMsg').textContent = 'Hoàn thành xuất sắc cả 4 cặp ghép nối (+20 Điểm)!';
+        sfxWin();
+      }
+    } else {
+      sfxErr();
+      const tmp = currA;
       tmp.classList.add('wrong');
       el.classList.add('wrong');
       setTimeout(() => {
         tmp.classList.remove('wrong', 'selected');
         el.classList.remove('wrong');
-      }, 400);
-      pickedA = null;
+      }, 450);
+      currA = null;
     }
   }
 
-  function replayMatch() {
-    sndClick();
-    addPts(-(matchedPairs * 10));
-    matchedPairs = 0;
-    pickedA = null;
-    document.getElementById('matchNotice').textContent = '';
-    document.querySelectorAll('.match-box').forEach(x => x.classList.remove('matched', 'selected', 'wrong'));
+  function resetMatching() {
+    sfxClick();
+    addScore(-(pairsCount * 5));
+    pairsCount = 0;
+    currA = null;
+    document.getElementById('matchMsg').textContent = '';
+    document.querySelectorAll('.m-card').forEach(x => x.classList.remove('matched', 'selected', 'wrong'));
   }
 
-  // VÒNG 2: TRẮC NGHIỆM
-  const doneQuiz = {};
-  function pickQuiz(qNum, btn, isOk, msg) {
-    if (doneQuiz[qNum]) return;
-    const box = document.getElementById('qmsg-' + qNum);
-    box.style.display = 'block';
-    box.textContent = msg;
-
+  // LOGIC VÒNG 2: TRẮC NGHIỆM (30 ĐIỂM — 3 CÂU x 10 ĐIỂM)
+  const quizLocked = {};
+  function ansQuiz(id, btn, isOk, msg) {
+    if (quizLocked[id]) return;
+    const exp = document.getElementById('qexp-' + id);
+    exp.style.display = 'block';
+    exp.textContent = msg;
     if (isOk) {
-      sndRight();
+      sfxOk();
       btn.classList.add('ok');
-      box.style.background = '#dcfce7';
-      box.style.color = '#166534';
-      box.style.border = '1.5px solid #16a34a';
-      doneQuiz[qNum] = true;
-      addPts(15);
-      document.querySelectorAll('#qz-' + qNum + ' .quiz-opt').forEach(b => b.disabled = true);
+      exp.style.background = '#dcfce7';
+      exp.style.color = '#166534';
+      exp.style.border = '1.5px solid #16a34a';
+      quizLocked[id] = true;
+      addScore(10);
+      document.querySelectorAll('#qc-' + id + ' .q-btn').forEach(b => b.disabled = true);
     } else {
-      sndWrong();
+      sfxErr();
       btn.classList.add('err');
-      box.style.background = '#ffe4e6';
-      box.style.color = '#9f1239';
-      box.style.border = '1.5px solid #e11d48';
+      exp.style.background = '#ffe4e6';
+      exp.style.color = '#9f1239';
+      exp.style.border = '1.5px solid #e11d48';
     }
   }
 </script>

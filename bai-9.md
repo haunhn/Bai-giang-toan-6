@@ -1,276 +1,508 @@
-[⬅️ Quay lại Trang chủ Mục lục](README.md)
-
-# 📘 CHƯƠNG II: TÍNH CHIA HẾT TRONG TẬP HỢP CÁC SỐ TỰ NHIÊN
-# 🌟 BÀI 9: DẤU HIỆU CHIA HẾT
-* **Môn học:** Toán học 6 (Tập 1) — *Bộ sách Kết nối tri thức với cuộc sống*
-* **Thời lượng tự học:** 45 – 60 phút
-* **Hình thức:** Học liệu số tương tác (Lý thuyết trực quan + Trò chơi vận dụng)
-
----
-
-> [!NOTE]
-> ### 🎯 MỤC TIÊU CẦN ĐẠT SAU BÀI HỌC
-> 1. **Nhận biết và phát biểu chuẩn xác** dấu hiệu chia hết cho **2**, cho **5**, cho **9** và cho **3**.
-> 2. **Phân biệt rõ ràng** hai nhóm dấu hiệu: Nhóm xét **chữ số tận cùng** (chia hết cho 2, cho 5) và nhóm xét **tổng các chữ số** (chia hết cho 9, cho 3).
-> 3. **Vận dụng linh hoạt** các dấu hiệu chia hết để nhanh chóng xác định một số hoặc một biểu thức (tổng/hiệu) có chia hết cho 2, 5, 9, 3 hay không mà không cần đặt phép chia.
-> 4. **Giải quyết được** các bài toán tìm chữ số chưa biết và các tình huống thực tiễn liên quan.
-
----
-
-## 🚀 KHỞI ĐỘNG: BÍ MẬT CỦA NHỮNG CON SỐ LỚN
-**Tình huống:** Trong một trò chơi đố vui toán học, người dẫn chương trình đưa ra một số tự nhiên khổng lồ: **`N = 2 026 485 130`** và hỏi: *"Trong vòng 5 giây, không dùng máy tính cầm tay hay đặt phép tính chia, đố bạn biết số N này có chia hết cho cả 2, 5, 3 và 9 hay không?"*
-
-❓ **Câu hỏi tư duy:** *Làm thế nào các nhà toán học có thể "nhìn xuyên thấu" một con số hàng tỷ chỉ trong vài giây để biết nó chia hết cho 2, 5, 9 hay 3?*
-
-➔ Bí quyết nằm ở **hai quy luật vàng** vô cùng đơn giản mà chúng ta sẽ khám phá ngay dưới đây!
-
----
-
-## 📖 NỘI DUNG 1: DẤU HIỆU CHIA HẾT CHO 2 VÀ CHO 5
-*(Quy luật 1: Chỉ cần nhìn vào **CHỮ SỐ TẬN CÙNG**)*
-
-### 1.1. Dấu hiệu chia hết cho 2
-🔍 **Quan sát:** Các số `10, 22, 34, 56, 78` đều chia hết cho 2. Điểm chung của chúng là đều có chữ số tận cùng là các chữ số chẵn: `0, 2, 4, 6, 8`.
-
-> [!IMPORTANT]
-> ### 📌 QUY TẮC CHIA HẾT CHO 2
-> * 🟢 Các số có **chữ số tận cùng là `0, 2, 4, 6, 8`** (tức là chữ số chẵn) thì **chia hết cho 2** và **chỉ những số đó** mới chia hết cho 2.
-> * 🔴 Các số có chữ số tận cùng là `1, 3, 5, 7, 9` (chữ số lẻ) thì **không chia hết cho 2**.
-
----
-
-### 1.2. Dấu hiệu chia hết cho 5
-🔍 **Quan sát:** Các số `15, 20, 45, 90, 105` đều chia hết cho 5. Điểm chung của chúng là đều kết thúc bằng chữ số `0` hoặc `5`.
-
-> [!IMPORTANT]
-> ### 📌 QUY TẮC CHIA HẾT CHO 5
-> * 🟢 Các số có **chữ số tận cùng là `0` hoặc `5`** thì **chia hết cho 5** và **chỉ những số đó** mới chia hết cho 5.
-> * 🔴 Các số không có tận cùng là 0 hoặc 5 thì **không chia hết cho 5**.
-
----
-
-### 1.3. Giao thoa đặc biệt: Số vừa chia hết cho 2, vừa chia hết cho 5
-Kết hợp hai dấu hiệu trên, ta rút ra một hệ quả cực kỳ quan trọng:
-* Số chia hết cho 2 phải tận cùng là: `0, 2, 4, 6, 8`.
-* Số chia hết cho 5 phải tận cùng là: `0, 5`.
-
-> [!TIP]
-> ### 💡 HỆ QUẢ VÀNG (CHIA HẾT CHO CẢ 2 VÀ 5)
-> Các số có **chữ số tận cùng là `0`** thì **vừa chia hết cho 2, vừa chia hết cho 5** (hay nói cách khác là **chia hết cho 10**).
-
-#### 📝 Trạm dừng thực hành số 1
-Cho các số sau: **`146; 255; 1 930; 2 023; 4 680`**. Không thực hiện phép chia, hãy tìm:
-1. Các số chia hết cho 2.
-2. Các số chia hết cho 5.
-3. Các số chia hết cho cả 2 và 5.
-
-<details>
-<summary>👉 <b>NHẤN VÀO ĐÂY ĐỂ XEM ĐÁP ÁN & LỜI GIẢI CHI TIẾT</b></summary>
-<br>
-
-* **Câu 1 (Chia hết cho 2 - tận cùng là 0, 2, 4, 6, 8):** Gồm các số **`146; 1 930; 4 680`**. 🟢
-* **Câu 2 (Chia hết cho 5 - tận cùng là 0 hoặc 5):** Gồm các số **`255; 1 930; 4 680`**. 🟢
-* **Câu 3 (Chia hết cho cả 2 và 5 - tận cùng là 0):** Gồm các số **`1 930; 4 680`**. *(Lưu ý: Số 2 023 tận cùng là 3 nên không chia hết cho cả 2 và 5)*. 🟢
-
-</details>
-
----
-
-## 📖 NỘI DUNG 2: DẤU HIỆU CHIA HẾT CHO 9 VÀ CHO 3
-*(Quy luật 2: Không nhìn chữ số tận cùng — Phải tính **TỔNG CÁC CHỮ SỐ**)*
-
-> [!CAUTION]
-> ### 🚨 SAI LẦM PHỔ BIẾN CẦN TRÁNH!
-> Rất nhiều bạn học sinh nhìn thấy số **`139`** có chữ số tận cùng là `9` liền kết luận ngay `139 ⋮ 9`, hoặc thấy số **`14`** tận cùng là `4` liền bảo `14 ∤ 3` vì 4 không chia hết cho 3. 
-> **Đó là cách hiểu SAI!** Đối với số 3 và số 9, chữ số đứng cuối không quyết định được điều gì, mà ta phải **cộng tất cả các chữ số của số đó lại**.
-
----
-
-### 2.1. Dấu hiệu chia hết cho 9
-🔍 **Hoạt động khám phá:** Xét số **`378`**. Ta lấy tổng các chữ số của nó: `3 + 7 + 8 = 18`. Vì `18 ⋮ 9` nên ta khẳng định ngay `378 ⋮ 9` *(kiểm tra: 378 : 9 = 42)*.
-
-> [!IMPORTANT]
-> ### 🌟 QUY TẮC CHIA HẾT CHO 9
-> Các số có **tổng các chữ số chia hết cho 9** thì **chia hết cho 9** và **chỉ những số đó** mới chia hết cho 9.
-
-**Ví dụ minh họa 1:**
-* Xét số **`2 457`**: Tổng các chữ số là `2 + 4 + 5 + 7 = 18`. Vì `18 ⋮ 9` nên **`2 457 ⋮ 9`**.
-* Xét số **`1 853`**: Tổng các chữ số là `1 + 8 + 5 + 3 = 17`. Vì `17 ∤ 9` nên **`1 853 ∤ 9`**.
-
----
-
-### 2.2. Dấu hiệu chia hết cho 3
-> [!IMPORTANT]
-> ### 🌟 QUY TẮC CHIA HẾT CHO 3
-> Các số có **tổng các chữ số chia hết cho 3** thì **chia hết cho 3** và **chỉ những số đó** mới chia hết cho 3.
-
-**Ví dụ minh họa 2:**
-* Xét số **`2 031`**: Tổng các chữ số là `2 + 0 + 3 + 1 = 6`. Vì `6 ⋮ 3` nên **`2 031 ⋮ 3`** *(nhưng vì `6 ∤ 9` nên `2 031 ∤ 9`)*.
-* Xét số **`514`**: Tổng các chữ số là `5 + 1 + 4 = 10`. Vì `10 ∤ 3` nên **`514 ∤ 3`**.
-
-> [!WARNING]
-> ### ⚡ MỐI QUAN HỆ GIỮA CHIA HẾT CHO 9 VÀ CHIA HẾT CHO 3
-> * **Chiều thuận (Luôn đúng):** Vì `9 ⋮ 3`, nên **mọi số chia hết cho 9 thì chắc chắn chia hết cho 3**.
-> * **Chiều ngược lại (Chưa chắc đúng):** Một số **chia hết cho 3 thì chưa chắc đã chia hết cho 9**! *(Ví dụ: Số `12` và số `15` đều chia hết cho 3, nhưng cả hai đều không chia hết cho 9)*.
-
-#### 📝 Trạm dừng thực hành số 2 (Giải quyết bài toán Khởi động)
-Quay lại con số khổng lồ ở đầu bài: **`N = 2 026 485 130`**. Hãy kiểm tra xem `N` có chia hết cho 2, 5, 3 và 9 không?
-
-<details>
-<summary>👉 <b>NHẤN VÀO ĐÂY ĐỂ XEM LỜI GIẢI KHOA HỌC</b></summary>
-<br>
-
-* **Bước 1 (Xét 2 và 5):** Số `N = 2 026 485 130` có chữ số tận cùng là **`0`**, nên **`N` chia hết cho cả 2 và 5**.
-* **Bước 2 (Xét 3 và 9):** Tổng các chữ số của `N` là:
-  `2 + 0 + 2 + 6 + 4 + 8 + 5 + 1 + 3 + 0 = 31`.
-* Vì `31 ∤ 9` và `31 ∤ 3` nên số **`N` KHÔNG chia hết cho 9 và cũng KHÔNG chia hết cho 3**! 🟢
-
-</details>
-
----
-
-## 🎮 ĐẤU TRƯỜNG TRÍ TUỆ: THỬ THÁCH NHÀ TOÁN HỌC TRẺ
-*(Phần ôn tập tương tác — Học sinh tự làm và click trực tiếp vào phương án mình chọn để mở khóa kết quả!)*
-
----
-
-### 🏆 VÒNG 1: PHẢN XẠ NHANH (10 Điểm / Câu)
-
-**Câu 1:** Trong các số tự nhiên sau: **`245; 680; 1 234; 3 055`**, số nào **vừa chia hết cho 2, vừa chia hết cho 5**?
-<details>
-<summary>🔘 <b>Phương án A: 245 và 3 055</b></summary>
-❌ <b>Chưa đúng!</b> Hai số này có tận cùng là 5 nên chỉ chia hết cho 5, không chia hết cho 2.
-</details>
-<details>
-<summary>🔘 <b>Phương án B: 680</b></summary>
-🎉 <b>CHÍNH XÁC! (+10 Điểm)</b> 🟢<br>
-<b>Giải thích khoa học:</b> Số vừa chia hết cho 2 vừa chia hết cho 5 phải có chữ số tận cùng là <b>0</b>. Trong các số đã cho, chỉ có duy nhất <b>680</b> tận cùng là 0!
-</details>
-<details>
-<summary>🔘 <b>Phương án C: 1 234</b></summary>
-❌ <b>Chưa đúng!</b> Số 1 234 có tận cùng là 4 nên chỉ chia hết cho 2, không chia hết cho 5.
-</details>
-
-<br>
-
-**Câu 2:** Số nào dưới đây **chia hết cho 3** nhưng **KHÔNG chia hết cho 9**?
-<details>
-<summary>🔘 <b>Phương án A: 4 518</b></summary>
-❌ <b>Bị lừa rồi!</b> Tổng các chữ số của 4 518 là `4 + 5 + 1 + 8 = 18`. Vì 18 ⋮ 9 nên số này chia hết cho cả 9 mất rồi!
-</details>
-<details>
-<summary>🔘 <b>Phương án B: 2 025</b></summary>
-❌ <b>Chưa chính xác!</b> Tổng các chữ số của 2 025 là `2 + 0 + 2 + 5 = 9`. Vì 9 ⋮ 9 nên 2 025 chia hết cho 9.
-</details>
-<details>
-<summary>🔘 <b>Phương án C: 1 356</b></summary>
-🎉 <b>XUẤT SẮC! (+10 Điểm)</b> 🟢<br>
-<b>Giải thích khoa học:</b> Ta có tổng các chữ số của 1 356 là `1 + 3 + 5 + 6 = 15`. Vì <b>15 ⋮ 3</b> nhưng <b>15 ∤ 9</b>, nên số <b>1 356</b> chia hết cho 3 mà không chia hết cho 9!
-</details>
-
----
-
-### 🔥 VÒNG 2: TÌM MẬT MÃ CHỮ SỐ (20 Điểm / Câu)
-
-**Câu 3:** Tìm chữ số `*` để số tự nhiên có 4 chữ số **`overline{35*8}`** chia hết cho **9**:
-<details>
-<summary>🔘 <b>Phương án A: * = 2</b></summary>
-🎉 <b>CHÍNH XÁC TUYỆT ĐỐI! (+20 Điểm)</b> 🟢<br>
-<b>Giải thích khoa học:</b> Tổng các chữ số của `overline{35*8}` là `3 + 5 + * + 8 = 16 + *`. Để số đó chia hết cho 9 thì `(16 + *) ⋮ 9`. Vì `*` là một chữ số (`0 ≤ * ≤ 9`) nên `16 + * = 18`, suy ra <b>* = 2</b>.
-</details>
-<details>
-<summary>🔘 <b>Phương án B: * = 3</b></summary>
-❌ <b>Sai rồi!</b> Nếu * = 3 thì tổng các chữ số là `16 + 3 = 19`, mà 19 không chia hết cho 9.
-</details>
-<details>
-<summary>🔘 <b>Phương án C: * = 9</b></summary>
-❌ <b>Sai rồi!</b> Đừng nhầm lẫn rằng cứ thay chữ số 9 vào là sẽ chia hết cho 9 nhé! Khi * = 9 thì tổng là `16 + 9 = 25 ∤ 9`.
-</details>
-
-<br>
-
-**Câu 4:** Không thực hiện phép tính, hãy cho biết tổng/hiệu nào dưới đây **CHIA HẾT CHO CẢ 3 VÀ 5**?
-* `Biểu thức A = 1 245 + 360`
-* `Biểu thức B = 930 - 125`
-* `Biểu thức C = 2 025 + 103`
-
-<details>
-<summary>🔘 <b>Phương án A: Biểu thức A = 1 245 + 360</b></summary>
-🎉 <b>ĐỈNH CAO TƯ DUY! (+20 Điểm)</b> 🟢<br>
-<b>Giải thích khoa học:</b> 
-• <b>Xét chia hết cho 5:</b> `1 245` (tận cùng 5) và `360` (tận cùng 0) đều chia hết cho 5 ➔ Tổng <b>A ⋮ 5</b>.<br>
-• <b>Xét chia hết cho 3:</b> Số `1 245` có tổng chữ số `1+2+4+5 = 12 ⋮ 3`; số `360` có tổng chữ số `3+6+0 = 9 ⋮ 3`. Theo Tính chất 1 (Bài 8), tổng <b>A ⋮ 3</b>.<br>
-Vậy biểu thức A chia hết cho cả 3 và 5!
-</details>
-<details>
-<summary>🔘 <b>Phương án B: Biểu thức B = 930 - 125</b></summary>
-❌ <b>Chưa đúng!</b> Số 930 chia hết cho 3 (`9+3+0 = 12 ⋮ 3`), nhưng số 125 có tổng các chữ số là `1+2+5 = 8 ∤ 3`. Do đó hiệu B không chia hết cho 3.
-</details>
-<details>
-<summary>🔘 <b>Phương án C: Biểu thức C = 2 025 + 103</b></summary>
-❌ <b>Chưa đúng!</b> Số 2 025 chia hết cho 5, nhưng 103 tận cùng là 3 nên không chia hết cho 5. Vậy tổng C không chia hết cho 5.
-</details>
-
----
-
-### 👑 VÒNG 3: CHINH PHỤC TỰ LUẬN & TOÁN THỰC TẾ (40 Điểm)
-*(Hoàn thành 3 bài tập chuẩn SGK vào vở, sau đó mở khóa đáp án để tự chấm điểm)*
-
-* **Bài tập 1 (Tìm chữ số thỏa mãn nhiều điều kiện kết hợp):**
-  Thay các chữ số `x, y` bởi những chữ số thích hợp để số tự nhiên **`N = overline{46xy}`** (gồm 4 chữ số) thỏa mãn đồng thời cả 3 điều kiện: **chia hết cho 2**, **chia hết cho 5** và **chia hết cho 9**.
-
-* **Bài tập 2 (Bài toán thực tế mua sắm - SGK Toán 6):**
-  Bác An đi siêu thị mua **3 túi cam** có giá tiền như nhau và **6 hộp sữa chua** cũng có giá tiền như nhau. Khi thanh toán, nhân viên thu ngân tính tổng số tiền hết **142 000 đồng**. Không cần biết giá cụ thể của từng món hàng, em hãy dùng kiến thức toán học để giúp bác An chỉ ra ngay rằng nhân viên thu ngân đã **tính sai**!
-
-* **Bài tập 3 (Thử thách nâng cao dành cho học sinh giỏi):**
-  Chứng minh rằng với mọi số tự nhiên *n*, biểu thức **`M = 10^n + 8`** luôn chia hết cho **9**.
-
-<details>
-<summary>🔓 <b>MỞ KHÓA HƯỚNG DẪN GIẢI VÀ THANG ĐIỂM TỰ CHẤM (VÒNG 3)</b></summary>
-<br>
-
-#### ✅ Lời giải Bài tập 1 (15 Điểm):
-* **Bước 1 (Tìm chữ số tận cùng *y*):** Vì số `N = overline{46xy}` vừa chia hết cho 2, vừa chia hết cho 5 nên chữ số tận cùng *y* bắt buộc phải bằng **0** ➔ **`y = 0`**. Khi đó số *N* có dạng **`overline{46x0}`**.
-* **Bước 2 (Tìm chữ số *x*):** Để `overline{46x0}` chia hết cho 9 thì tổng các chữ số của nó phải chia hết cho 9, tức là:
-  **`(4 + 6 + x + 0) ⋮ 9`** hay **`(10 + x) ⋮ 9`**.
-* Vì *x* là một chữ số (`0 ≤ x ≤ 9`) nên `10 ≤ 10 + x ≤ 19`. Trong khoảng này chỉ có số **18** chia hết cho 9:
-  `10 + x = 18` ➔ **`x = 8`**.
-* **Kết luận:** Vậy **`x = 8, y = 0`** và số cần tìm là **`4 680`**.
-
----
-
-#### ✅ Lời giải Bài tập 2 (15 Điểm):
-* Gọi giá tiền của 1 túi cam là *a* (đồng) và giá tiền của 1 hộp sữa chua là *b* (đồng).
-* Tổng số tiền bác An phải trả là biểu thức: **`S = 3 . a + 6 . b`**.
-* **Phân tích tính chia hết cho 3:**
-  * Tiền 3 túi cam là `3 . a` luôn chia hết cho 3 *(vì 3 ⋮ 3)*.
-  * Tiền 6 hộp sữa chua là `6 . b` luôn chia hết cho 3 *(vì 6 ⋮ 3)*.
-  * Theo Tính chất 1 của phép chia hết, tổng số tiền **`S = (3 . a + 6 . b)` bắt buộc phải chia hết cho 3**!
-* **Kiểm tra số tiền thu ngân báo:** Số `142 000` có tổng các chữ số là `1 + 4 + 2 + 0 + 0 + 0 = 7`. Vì **`7 ∤ 3`** nên **`142 000 ∤ 3`**.
-* **Kết luận:** Vậy nhân viên thu ngân chắc chắn đã tính sai tổng số tiền!
-
----
-
-#### ✅ Lời giải Bài tập 3 - Nâng cao (10 Điểm):
-* Ta biết rằng lũy thừa `10^n` được viết dưới dạng một chữ số `1` đứng đầu và *n* chữ số `0` đứng sau:
-  **`10^n = 100...0`** *(có n chữ số 0)*.
-* Khi cộng thêm 8, ta được số **`M = 10^n + 8 = 100...08`** *(gồm một chữ số 1, (n - 1) chữ số 0 và tận cùng là một chữ số 8)*.
-* Tính tổng các chữ số của số *M*:
-  **`Tổng các chữ số = 1 + 0 + 0 + ... + 0 + 8 = 9`**.
-* Vì **`9 ⋮ 9`** nên theo dấu hiệu chia hết cho 9, biểu thức **`M = 10^n + 8` luôn chia hết cho 9** với mọi số tự nhiên *n* (Điều phải chứng minh)!
-
-</details>
-
----
-
-## 🗺️ SƠ ĐỒ TỔNG KẾT KIẾN THỨC CỐT LÕI (DÀNH CHO ÔN THI)
-
-| <div align="center">🎯 <b>TỔNG HỢP DẤU HIỆU CHIA HẾT CHO 2, 5, 9, 3</b></div> |
-| :--- |
-| **🟠 NHÓM 1: XÉT CHỮ SỐ TẬN CÙNG (DÀNH CHO 2 VÀ 5)** |
-| • **Chia hết cho 2:** Chữ số tận cùng là **`0; 2; 4; 6; 8`** *(chữ số chẵn)*.<br>• **Chia hết cho 5:** Chữ số tận cùng là **`0`** hoặc **`5`**.<br>• **Chia hết cho cả 2 và 5 (Chia hết cho 10):** Chữ số tận cùng bắt buộc là **`0`**. |
-| **🔵 NHÓM 2: XÉT TỔNG CÁC CHỮ SỐ (DÀNH CHO 9 VÀ 3)** |
-| • **Chia hết cho 9:** **Tổng các chữ số** chia hết cho **9**.<br>• **Chia hết cho 3:** **Tổng các chữ số** chia hết cho **3**.<br>*(⚠️ Lưu ý quan trọng: Số chia hết cho 9 thì luôn chia hết cho 3, nhưng số chia hết cho 3 thì chưa chắc đã chia hết cho 9).* |
-
----
-[⬅️ Quay lại Trang chủ Mục lục](README.md)
+<style>
+  /* Ẩn tiêu đề mặc định của GitHub Pages & Thiết lập nền Vàng nhạt */
+  .markdown-body > h1:first-child { display: none !important; }
+  .container-lg, .markdown-body { max-width: 960px !important; margin: 0 auto !important; padding: 16px !important; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important; color: #422006 !important; background-color: #fefce8 !important; }
+  body { background-color: #fefce8 !important; }
+
+  /* Thanh điều khiển cố định (Sticky Bar) */
+  .amb-topbar { position: sticky; top: 10px; z-index: 999; background: #ffffff; border: 2px solid #f59e0b; border-radius: 12px; padding: 10px 20px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 8px 20px rgba(217, 119, 6, 0.12); flex-wrap: wrap; gap: 10px; }
+  .amb-topbar-title { font-weight: 800; color: #92400e; font-size: 0.98rem; letter-spacing: 0.3px; }
+  .amb-topbar-right { display: flex; align-items: center; gap: 12px; }
+  .amb-score-badge { background: #fef3c7; color: #b45309; border: 1.5px solid #f59e0b; padding: 5px 16px; border-radius: 99px; font-weight: 800; font-size: 0.95rem; }
+  .amb-sound-btn { background: #d97706; color: #ffffff; border: none; padding: 7px 15px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.88rem; transition: 0.2s; }
+  .amb-sound-btn:hover { background: #b45309; }
+
+  /* Khung Banner chính */
+  .amb-hero { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 2px solid #f59e0b; border-radius: 16px; padding: 28px 24px; text-align: center; margin-bottom: 26px; box-shadow: 0 8px 22px rgba(217, 119, 6, 0.1); }
+  .amb-hero-tag { display: inline-block; background: #d97706; color: #ffffff; font-weight: 800; font-size: 0.82rem; padding: 5px 16px; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 10px; }
+  .amb-hero-title { color: #78350f !important; font-size: 1.95rem !important; font-weight: 800 !important; margin: 0 0 14px 0 !important; border: none !important; padding: 0 !important; }
+  .amb-meta-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+  .amb-meta-item { background: #ffffff; border: 1px solid #fcd34d; color: #92400e; padding: 5px 14px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; }
+
+  /* Hệ thống Khung bài giảng (Section Frames) */
+  .amb-card { background: #ffffff; border: 2px solid #fde68a; border-radius: 16px; margin-bottom: 26px; overflow: hidden; box-shadow: 0 5px 15px rgba(217, 119, 6, 0.06); }
+  .amb-card-head { background: linear-gradient(90deg, #fef3c7 0%, #fde68a 100%); border-bottom: 2px solid #fcd34d; padding: 14px 22px; color: #78350f; font-size: 1.18rem; font-weight: 800; display: flex; justify-content: space-between; align-items: center; }
+  .amb-step-tag { background: #d97706; color: #fff; font-size: 0.78rem; padding: 3px 10px; border-radius: 12px; font-weight: 700; }
+  .amb-card-body { padding: 22px; line-height: 1.65; font-size: 1rem; }
+
+  /* Khung bài tập dẫn dắt (Interactive Discovery Box) */
+  .amb-quest-box { background: #fffbeb; border: 1.5px dashed #f59e0b; border-radius: 12px; padding: 18px; margin-bottom: 16px; }
+  .amb-quest-title { font-weight: 800; color: #b45309; margin-bottom: 10px; font-size: 1.02rem; text-transform: uppercase; }
+
+  /* Các nút chọn số tương tác (Number Chips) */
+  .chip-grid { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; }
+  .num-chip { background: #ffffff; border: 2px solid #fcd34d; color: #78350f; padding: 10px 18px; border-radius: 10px; font-weight: 800; font-size: 1.05rem; cursor: pointer; transition: 0.2s; user-select: none; }
+  .num-chip:hover { background: #fef3c7; border-color: #d97706; transform: translateY(-2px); }
+  .num-chip.correct { background: #dcfce7; border-color: #16a34a; color: #166534; }
+  .num-chip.wrong { background: #ffe4e6; border-color: #e11d48; color: #9f1239; }
+
+  /* Ô nhập liệu khám phá (Interactive Input) */
+  .lab-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin: 14px 0; }
+  .lab-card { background: #ffffff; border: 1.5px solid #fde68a; border-radius: 10px; padding: 14px; }
+  .lab-input-group { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+  .lab-input { width: 80px; padding: 7px 10px; border: 2px solid #fcd34d; border-radius: 8px; font-weight: 800; text-align: center; font-size: 1rem; color: #78350f; outline: none; }
+  .lab-input:focus { border-color: #d97706; background: #fffbeb; }
+  .lab-btn { background: #d97706; color: #ffffff; border: none; padding: 8px 14px; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.2s; }
+  .lab-btn:hover { background: #b45309; }
+  .lab-feedback { font-size: 0.9rem; font-weight: 700; margin-top: 8px; min-height: 22px; }
+
+  /* Hộp chốt kiến thức (Rút gọn, mở khóa sau khi khám phá) */
+  .amb-rule-box { background: #fef3c7; border-left: 6px solid #d97706; border-radius: 10px; padding: 16px 20px; margin-top: 14px; color: #78350f; }
+  .amb-rule-title { font-weight: 800; color: #92400e; margin-bottom: 6px; text-transform: uppercase; font-size: 0.95rem; }
+  .k-tag { background: #ffffff; color: #b45309; border: 1px solid #f59e0b; padding: 1px 8px; border-radius: 6px; font-family: 'Consolas', monospace; font-weight: 800; font-size: 0.95em; display: inline-block; }
+
+  /* Bảng tổng kết gọn đẹp */
+  .amb-table { width: 100%; border-collapse: collapse; margin-top: 10px; border-radius: 10px; overflow: hidden; border: 1.5px solid #fcd34d; }
+  .amb-table th { background: #d97706 !important; color: #ffffff !important; padding: 11px 15px !important; text-align: left; font-weight: 800; border: 1px solid #b45309 !important; }
+  .amb-table td { padding: 11px 15px !important; border: 1px solid #fde68a !important; background: #ffffff !important; color: #422006 !important; }
+  .amb-table tr:nth-child(even) td { background: #fffbeb !important; }
+
+  /* Trò chơi Nối cặp (Matching Game) */
+  .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 14px; }
+  .match-head { background: #d97706; color: #ffffff; text-align: center; padding: 9px; border-radius: 8px; font-weight: 800; margin-bottom: 10px; }
+  .m-card { background: #fffbeb; border: 2px solid #fcd34d; border-radius: 10px; padding: 13px 15px; margin-bottom: 10px; font-weight: 700; color: #78350f; cursor: pointer; transition: 0.2s; display: flex; justify-content: space-between; align-items: center; user-select: none; }
+  .m-card:hover:not(.matched) { background: #fef3c7; border-color: #d97706; transform: translateY(-2px); }
+  .m-card.selected { background: #d97706; color: #ffffff; border-color: #92400e; box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.25); }
+  .m-card.matched { background: #dcfce7; border-color: #16a34a; color: #166534; cursor: default; }
+  .m-card.wrong { background: #ffe4e6; border-color: #e11d48; color: #9f1239; }
+  .m-badge { font-size: 0.78rem; background: #16a34a; color: #fff; padding: 2px 8px; border-radius: 10px; display: none; }
+  .m-card.matched .m-badge { display: inline-block; }
+
+  /* Trắc nghiệm tốc độ */
+  .q-card { background: #fffbeb; border: 1.5px solid #fcd34d; border-radius: 12px; padding: 16px; margin-bottom: 14px; }
+  .q-title { font-weight: 800; color: #78350f; margin-bottom: 10px; }
+  .q-opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+  .q-btn { background: #ffffff; border: 2px solid #fde68a; padding: 10px 14px; border-radius: 8px; font-weight: 700; color: #422006; cursor: pointer; text-align: left; transition: 0.2s; }
+  .q-btn:hover:not(:disabled) { background: #fef3c7; border-color: #d97706; }
+  .q-btn.ok { background: #dcfce7; border-color: #16a34a; color: #166534; }
+  .q-btn.err { background: #ffe4e6; border-color: #e11d48; color: #9f1239; }
+  .q-exp { display: none; margin-top: 10px; padding: 10px 14px; border-radius: 8px; font-weight: 600; font-size: 0.92rem; }
+
+  @media (max-width: 680px) {
+    .match-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<!-- THANH ĐIỀU KHIỂN CỐ ĐỊNH -->
+<div class="amb-topbar">
+  <div class="amb-topbar-title">TOÁN 6 — BÀI 9: DẤU HIỆU CHIA HẾT</div>
+  <div class="amb-topbar-right">
+    <div class="amb-score-badge">ĐIỂM KHÁM PHÁ: <span id="ptsVal">0</span> / 100</div>
+    <button class="amb-sound-btn" id="btnSound" onclick="toggleSound()">Âm thanh: ĐANG BẬT</button>
+  </div>
+</div>
+
+<!-- BANNER MỞ ĐẦU -->
+<div class="amb-hero">
+  <div class="amb-hero-tag">CHƯƠNG II: TÍNH CHIA HẾT TRONG TẬP HỢP CÁC SỐ TỰ NHIÊN</div>
+  <h1 class="amb-hero-title">BÀI 9: DẤU HIỆU CHIA HẾT</h1>
+  <div class="amb-meta-row">
+    <div class="amb-meta-item">Toán 6 (Tập 1) — Kết nối tri thức với cuộc sống</div>
+    <div class="amb-meta-item">Phương pháp: Tương tác — Tự khám phá quy tắc</div>
+  </div>
+</div>
+
+<!-- TRẠM KHÁM PHÁ 1: DẤU HIỆU CHIA HẾT CHO 2 VÀ 5 -->
+<div class="amb-card">
+  <div class="amb-card-head">
+    <span>TRẠM KHÁM PHÁ 1: BÍ MẬT CỦA CHỮ SỐ TẬN CÙNG (CHIA HẾT CHO 2 VÀ 5)</span>
+    <span class="amb-step-tag">Bước 1 / 3</span>
+  </div>
+  <div class="amb-card-body">
+
+    <div class="amb-quest-box">
+      <div class="amb-quest-title">THỬ THÁCH DẪN DẮT 1A: SĂN TÌM SỐ CHIA HẾT CHO 2 (+10 ĐIỂM)</div>
+      <p><b>Nhiệm vụ:</b> Không đặt phép tính chia, hãy <b>bấm chọn 4 số chia hết cho 2</b> trong dãy số dưới đây và quan sát <b>chữ số tận cùng</b> của chúng:</p>
+      <div class="chip-grid" id="group2">
+        <div class="num-chip" onclick="checkChip2(this, true)">12<b>0</b></div>
+        <div class="num-chip" onclick="checkChip2(this, false)">34<b>5</b></div>
+        <div class="num-chip" onclick="checkChip2(this, true)">8<b>4</b></div>
+        <div class="num-chip" onclick="checkChip2(this, false)">91<b>7</b></div>
+        <div class="num-chip" onclick="checkChip2(this, true)">53<b>6</b></div>
+        <div class="num-chip" onclick="checkChip2(this, true)">202<b>8</b></div>
+      </div>
+      <div id="msgChip2" style="font-weight:700; color:#b45309; font-size:0.92rem;"></div>
+    </div>
+
+    <div class="amb-quest-box">
+      <div class="amb-quest-title">THỬ THÁCH DẪN DẮT 1B: SĂN TÌM SỐ CHIA HẾT CHO 5 (+10 ĐIỂM)</div>
+      <p><b>Nhiệm vụ:</b> Hãy <b>bấm chọn 3 số chia hết cho 5</b> dưới đây. Số nào vừa chia hết cho 2, vừa chia hết cho 5?</p>
+      <div class="chip-grid" id="group5">
+        <div class="num-chip" onclick="checkChip5(this, true)">13<b>5</b></div>
+        <div class="num-chip" onclick="checkChip5(this, false)">40<b>2</b></div>
+        <div class="num-chip" onclick="checkChip5(this, true)">9<b>0</b></div>
+        <div class="num-chip" onclick="checkChip5(this, false)">78<b>8</b></div>
+        <div class="num-chip" onclick="checkChip5(this, true)">65<b>0</b></div>
+      </div>
+      <div id="msgChip5" style="font-weight:700; color:#b45309; font-size:0.92rem;"></div>
+    </div>
+
+    <div class="amb-rule-box">
+      <div class="amb-rule-title">KẾT LUẬN RÚT RA TỪ THỬ THÁCH 1</div>
+      <ul>
+        <li><b>Dấu hiệu chia hết cho 2:</b> Các số có <b>chữ số tận cùng</b> là <span class="k-tag">0; 2; 4; 6; 8</span> (số chẵn) thì chia hết cho 2.</li>
+        <li><b>Dấu hiệu chia hết cho 5:</b> Các số có <b>chữ số tận cùng</b> là <span class="k-tag">0</span> hoặc <span class="k-tag">5</span> thì chia hết cho 5.</li>
+        <li><b>Hệ quả:</b> Số vừa chia hết cho 2, vừa chia hết cho 5 thì có <b>chữ số tận cùng bằng <span class="k-tag">0</span></b>.</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- TRẠM KHÁM PHÁ 2: DẤU HIỆU CHIA HẾT CHO 9 VÀ 3 -->
+<div class="amb-card">
+  <div class="amb-card-head">
+    <span>TRẠM KHÁM PHÁ 2: QUY LUẬT TỔNG CÁC CHỮ SỐ (CHIA HẾT CHO 9 VÀ 3)</span>
+    <span class="amb-step-tag">Bước 2 / 3</span>
+  </div>
+  <div class="amb-card-body">
+
+    <div class="amb-quest-box">
+      <div class="amb-quest-title">THỬ THÁCH DẪN DẮT 2: PHÒNG THÍ NGHIỆM TỔNG CÁC CHỮ SỐ (+20 ĐIỂM)</div>
+      <p><b>Tình huống:</b> Số <span class="k-tag">254</span> có chữ số tận cùng là 4 nhưng <b>không chia hết cho 3 và 9</b>. Ngược lại, số <span class="k-tag">378</span> lại <b>chia hết cho cả 3 và 9</b>! Vậy chữ số tận cùng không còn quyết định nữa. Hãy tính <b>tổng các chữ số</b> ở 2 thí nghiệm dưới đây để tìm ra bí mật:</p>
+
+      <div class="lab-row">
+        <!-- Thí nghiệm 1 -->
+        <div class="lab-card">
+          <b>Thí nghiệm A:</b> Xét số <span class="k-tag">378</span> <i>(Biết 378 ⋮ 9 và 378 ⋮ 3)</i>.<br>
+          Hãy tính tổng các chữ số: <span class="k-tag">3 + 7 + 8 = ?</span>
+          <div class="lab-input-group">
+            <input type="number" id="inpLab1" class="lab-input" placeholder="?">
+            <button class="lab-btn" onclick="verifyLab(1, 18, 'Chính xác! Tổng bằng 18 (chia hết cho cả 9 và 3) ➔ 378 chia hết cho 9 và 3!')">Kiểm tra</button>
+          </div>
+          <div class="lab-feedback" id="fbLab1"></div>
+        </div>
+
+        <!-- Thí nghiệm 2 -->
+        <div class="lab-card">
+          <b>Thí nghiệm B:</b> Tìm chữ số <span class="k-tag">x</span> để số <span class="k-tag">21x</span> chia hết cho 9.<br>
+          Ta có: <span class="k-tag">2 + 1 + x = 3 + x</span>. Để <span class="k-tag">(3 + x) ⋮ 9</span> thì <span class="k-tag">x</span> bằng mấy?
+          <div class="lab-input-group">
+            <input type="number" id="inpLab2" class="lab-input" placeholder="x = ?">
+            <button class="lab-btn" onclick="verifyLab(2, 6, 'Tuyệt vời! Với x = 6 thì tổng chữ số là 2 + 1 + 6 = 9 ⋮ 9 ➔ Số 216 ⋮ 9!')">Kiểm tra</button>
+          </div>
+          <div class="lab-feedback" id="fbLab2"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="amb-rule-box">
+      <div class="amb-rule-title">KẾT LUẬN RÚT RA TỪ THỬ THÁCH 2</div>
+      <ul>
+        <li><b>Dấu hiệu chia hết cho 9:</b> Các số có <b>tổng các chữ số</b> chia hết cho 9 thì chia hết cho 9 (và chỉ những số đó mới chia hết cho 9).</li>
+        <li><b>Dấu hiệu chia hết cho 3:</b> Các số có <b>tổng các chữ số</b> chia hết cho 3 thì chia hết cho 3 (và chỉ những số đó mới chia hết cho 3).</li>
+        <li><b>Lưu ý quan trọng:</b> Mọi số chia hết cho 9 thì <b>luôn chia hết cho 3</b>, nhưng một số chia hết cho 3 thì <b>chưa chắc chia hết cho 9</b> <i>(Ví dụ: 15 ⋮ 3 nhưng 15 ∤ 9)</i>.</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- ĐẤU TRƯỜNG TRÒ CHƠI TƯƠNG TÁC -->
+<div class="amb-card">
+  <div class="amb-card-head">
+    <span>TRẠM KHÁM PHÁ 3: ĐẤU TRƯỜNG NỐI CẶP & PHẢN XẠ TOÁN HỌC</span>
+    <span class="amb-step-tag">Bước 3 / 3</span>
+  </div>
+  <div class="amb-card-body">
+
+    <!-- VÒNG 1: TRÒ CHƠI NỐI CẶP -->
+    <div class="amb-quest-box">
+      <div class="amb-quest-title">VÒNG 1: GHÉP NỐI TỐC ĐỘ (30 ĐIỂM — 10 Điểm / Cặp)</div>
+      <p><b>Cách chơi:</b> Nhấn chọn một yêu cầu ở <b>CỘT A</b>, sau đó nhấn chọn số thỏa mãn tương ứng ở <b>CỘT B</b> để nối cặp.</p>
+
+      <div class="match-grid">
+        <div>
+          <div class="match-head">CỘT A: ĐẶC ĐIỂM SỐ</div>
+          <div class="m-card" data-a="1" onclick="selA(this)">
+            <span>1. Chia hết cho cả 2, 3, 5 và 9</span>
+            <span class="m-badge" id="bA-1"></span>
+          </div>
+          <div class="m-card" data-a="2" onclick="selA(this)">
+            <span>2. Chia hết cho 3 nhưng KHÔNG chia hết cho 9</span>
+            <span class="m-badge" id="bA-2"></span>
+          </div>
+          <div class="m-card" data-a="3" onclick="selA(this)">
+            <span>3. Chia hết cho 5 nhưng KHÔNG chia hết cho 2</span>
+            <span class="m-badge" id="bA-3"></span>
+          </div>
+        </div>
+
+        <div>
+          <div class="match-head">CỘT B: CON SỐ BÍ ẨN</div>
+          <div class="m-card" data-b="2" onclick="selB(this)">
+            <span>a) Số 2022 (Tổng chữ số = 6)</span>
+            <span class="m-badge" id="bB-2"></span>
+          </div>
+          <div class="m-card" data-b="3" onclick="selB(this)">
+            <span>b) Số 1945 (Tận cùng là 5)</span>
+            <span class="m-badge" id="bB-3"></span>
+          </div>
+          <div class="m-card" data-b="1" onclick="selB(this)">
+            <span>c) Số 450 (Tận cùng là 0, tổng chữ số = 9)</span>
+            <span class="m-badge" id="bB-1"></span>
+          </div>
+        </div>
+      </div>
+
+      <div id="matchMsg" style="margin-top:8px; font-weight:800; color:#b45309;"></div>
+      <button class="lab-btn" style="margin-top:8px;" onclick="resetMatching()">Chơi lại Vòng 1</button>
+    </div>
+
+    <!-- VÒNG 2: TRẮC NGHIỆM VẬN DỤNG -->
+    <div class="amb-quest-box" style="margin-bottom:0;">
+      <div class="amb-quest-title">VÒNG 2: THỬ THÁCH VẬN DỤNG THỰC TẾ (30 ĐIỂM — 15 Điểm / Câu)</div>
+
+      <div class="q-card" id="qc-1">
+        <div class="q-title">Câu 1: Một cửa hàng có 3 thùng sữa tươi với số hộp lần lượt là: 124 hộp, 180 hộp và 205 hộp. Người bán hàng muốn chia đều một thùng sữa vào 9 giỏ quà mà không bị lẻ hộp nào. Hỏi người đó phải chọn thùng nào?</div>
+        <div class="q-opts">
+          <button class="q-btn" onclick="ansQuiz(1, this, false, 'Chưa đúng! 124 có tổng các chữ số là 1 + 2 + 4 = 7 (không chia hết cho 9).')">A. Thùng 124 hộp</button>
+          <button class="q-btn" onclick="ansQuiz(1, this, true, 'CHÍNH XÁC (+15 Điểm)! Số 180 có tổng các chữ số là 1 + 8 + 0 = 9 ⋮ 9 nên chia đều được vào 9 giỏ quà.')">B. Thùng 180 hộp</button>
+          <button class="q-btn" onclick="ansQuiz(1, this, false, 'Chưa đúng! 205 có tổng các chữ số là 2 + 0 + 5 = 7 (không chia hết cho 9).')">C. Thùng 205 hộp</button>
+        </div>
+        <div class="q-exp" id="qexp-1"></div>
+      </div>
+
+      <div class="q-card" id="qc-2" style="margin-bottom:0;">
+        <div class="q-title">Câu 2: Không thực hiện phép tính, hãy xét xem tổng S = 135 + 2020 + 45 có chia hết cho cả 3 và 5 hay không?</div>
+        <div class="q-opts">
+          <button class="q-btn" onclick="ansQuiz(2, this, false, 'Bị lừa rồi! Cả 3 số hạng đều chia hết cho 5, nhưng 2020 có tổng các chữ số là 4 ∤ 3 (trong khi 135 ⋮ 3 và 45 ⋮ 3) nên tổng S không chia hết cho 3.')">A. Chia hết cho cả 3 và 5</button>
+          <button class="q-btn" onclick="ansQuiz(2, this, true, 'XUẤT SẮC (+15 Điểm)! Vì 135, 2020, 45 đều tận cùng là 0 hoặc 5 nên S ⋮ 5. Nhưng 135 ⋮ 3, 45 ⋮ 3 còn 2020 ∤ 3 (tổng chữ số = 4) nên S ∤ 3.')">B. Chia hết cho 5 nhưng không chia hết cho 3</button>
+          <button class="q-btn" onclick="ansQuiz(2, this, false, 'Sai rồi! Các số hạng đều có tận cùng là 0 hoặc 5 nên tổng chắc chắn chia hết cho 5.')">C. Không chia hết cho cả 3 và 5</button>
+        </div>
+        <div class="q-exp" id="qexp-2"></div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- BẢNG TỔNG KẾT SIÊU NGẮN GỌN -->
+<div class="amb-card" style="margin-bottom:0;">
+  <div class="amb-card-head">
+    <span>BẢNG TÓM TẮT 4 DẤU HIỆU CHIA HẾT TRỌNG TÂM</span>
+    <span class="amb-step-tag">Ghi nhớ 10 giây</span>
+  </div>
+  <div class="amb-card-body">
+    <table class="amb-table">
+      <thead>
+        <tr>
+          <th width="25%">Nhóm dấu hiệu</th>
+          <th width="20%">Chia hết cho</th>
+          <th width="55%">Quy tắc nhận biết nhanh</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2"><b>Nhìn chữ số tận cùng</b></td>
+          <td><b>Cho 2</b></td>
+          <td>Chữ số tận cùng là số chẵn: <span class="k-tag">0; 2; 4; 6; 8</span></td>
+        </tr>
+        <tr>
+          <td><b>Cho 5</b></td>
+          <td>Chữ số tận cùng là: <span class="k-tag">0</span> hoặc <span class="k-tag">5</span> <i>(Chia hết cho cả 2 và 5 ➔ Tận cùng là <span class="k-tag">0</span>)</i></td>
+        </tr>
+        <tr>
+          <td rowspan="2"><b>Tính tổng các chữ số</b></td>
+          <td><b>Cho 9</b></td>
+          <td><b>Tổng các chữ số</b> chia hết cho <span class="k-tag">9</span></td>
+        </tr>
+        <tr>
+          <td><b>Cho 3</b></td>
+          <td><b>Tổng các chữ số</b> chia hết cho <span class="k-tag">3</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  // BỘ PHÁT ÂM THANH TỰ ĐỘNG (WEB AUDIO API)
+  let soundOn = true;
+  const AudioCtx = window.AudioContext || window.webkitAudioContext;
+  let actx = null;
+
+  function initAudio() {
+    if (!actx) actx = new AudioCtx();
+    if (actx.state === 'suspended') actx.resume();
+  }
+
+  function playNote(freq, type, dur, delay = 0) {
+    if (!soundOn) return;
+    initAudio();
+    setTimeout(() => {
+      const osc = actx.createOscillator();
+      const gain = actx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, actx.currentTime);
+      gain.gain.setValueAtTime(0.18, actx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + dur);
+      osc.connect(gain);
+      gain.connect(actx.destination);
+      osc.start();
+      osc.stop(actx.currentTime + dur);
+    }, delay);
+  }
+
+  function sfxClick() { playNote(560, 'sine', 0.07); }
+  function sfxOk() { playNote(587.33, 'triangle', 0.13, 0); playNote(880, 'triangle', 0.26, 110); }
+  function sfxErr() { playNote(210, 'sawtooth', 0.15, 0); playNote(165, 'sawtooth', 0.22, 130); }
+  function sfxWin() {
+    playNote(523.25, 'triangle', 0.13, 0);
+    playNote(659.25, 'triangle', 0.13, 120);
+    playNote(783.99, 'triangle', 0.13, 240);
+    playNote(1046.50, 'triangle', 0.38, 360);
+  }
+
+  function toggleSound() {
+    soundOn = !soundOn;
+    document.getElementById('btnSound').textContent = soundOn ? 'Âm thanh: ĐANG BẬT' : 'Âm thanh: ĐÃ TẮT';
+    if (soundOn) sfxClick();
+  }
+
+  // ĐIỂM SỐ
+  let totalPts = 0;
+  function addScore(val) {
+    totalPts += val;
+    document.getElementById('ptsVal').textContent = totalPts;
+    if (totalPts === 100) setTimeout(sfxWin, 300);
+  }
+
+  // LOGIC TRẠM 1A: CHỌN SỐ CHIA HẾT CHO 2
+  let count2 = 0;
+  let done2 = false;
+  function checkChip2(el, isRight) {
+    if (el.classList.contains('correct') || el.classList.contains('wrong') || done2) return;
+    if (isRight) {
+      sfxOk();
+      el.classList.add('correct');
+      count2++;
+      if (count2 === 4) {
+        done2 = true;
+        addScore(10);
+        document.getElementById('msgChip2').textContent = 'Tuyệt vời (+10 Điểm)! Các số chia hết cho 2 đều có chữ số tận cùng là 0, 2, 4, 6, 8.';
+      }
+    } else {
+      sfxErr();
+      el.classList.add('wrong');
+      setTimeout(() => el.classList.remove('wrong'), 500);
+    }
+  }
+
+  // LOGIC TRẠM 1B: CHỌN SỐ CHIA HẾT CHO 5
+  let count5 = 0;
+  let done5 = false;
+  function checkChip5(el, isRight) {
+    if (el.classList.contains('correct') || el.classList.contains('wrong') || done5) return;
+    if (isRight) {
+      sfxOk();
+      el.classList.add('correct');
+      count5++;
+      if (count5 === 3) {
+        done5 = true;
+        addScore(10);
+        document.getElementById('msgChip5').textContent = 'Chính xác (+10 Điểm)! Các số chia hết cho 5 có tận cùng là 0 hoặc 5 (Riêng 90 và 650 tận cùng là 0 nên chia hết cho cả 2 và 5).';
+      }
+    } else {
+      sfxErr();
+      el.classList.add('wrong');
+      setTimeout(() => el.classList.remove('wrong'), 500);
+    }
+  }
+
+  // LOGIC TRẠM 2: PHÒNG THÍ NGHIỆM TỔNG CHỮ SỐ
+  const labDone = {};
+  function verifyLab(id, expected, okMsg) {
+    if (labDone[id]) return;
+    const val = parseInt(document.getElementById('inpLab' + id).value, 10);
+    const fb = document.getElementById('fbLab' + id);
+    if (val === expected) {
+      sfxOk();
+      fb.style.color = '#166534';
+      fb.textContent = okMsg + ' (+10 Điểm)';
+      labDone[id] = true;
+      addScore(10);
+    } else {
+      sfxErr();
+      fb.style.color = '#9f1239';
+      fb.textContent = 'Chưa chính xác, hãy cộng lại các chữ số nhé!';
+    }
+  }
+
+  // LOGIC VÒNG 1: NỐI CẶP
+  let currA = null;
+  let pairsCount = 0;
+  function selA(el) {
+    if (el.classList.contains('matched')) return;
+    sfxClick();
+    document.querySelectorAll('[data-a]').forEach(x => x.classList.remove('selected'));
+    el.classList.add('selected');
+    currA = el;
+  }
+
+  function selB(el) {
+    if (el.classList.contains('matched') || !currA) return;
+    const aId = currA.getAttribute('data-a');
+    const bId = el.getAttribute('data-b');
+    if (aId === bId) {
+      sfxOk();
+      currA.classList.remove('selected');
+      currA.classList.add('matched');
+      el.classList.add('matched');
+      document.getElementById('bA-' + aId).textContent = 'Cặp #' + aId;
+      document.getElementById('bB-' + bId).textContent = 'Cặp #' + aId;
+      currA = null;
+      pairsCount++;
+      addScore(10);
+      if (pairsCount === 3) {
+        document.getElementById('matchMsg').textContent = 'Hoàn thành xuất sắc cả 3 cặp ghép nối (+30 Điểm)!';
+        sfxWin();
+      }
+    } else {
+      sfxErr();
+      const tmp = currA;
+      tmp.classList.add('wrong');
+      el.classList.add('wrong');
+      setTimeout(() => {
+        tmp.classList.remove('wrong', 'selected');
+        el.classList.remove('wrong');
+      }, 450);
+      currA = null;
+    }
+  }
+
+  function resetMatching() {
+    sfxClick();
+    addScore(-(pairsCount * 10));
+    pairsCount = 0;
+    currA = null;
+    document.getElementById('matchMsg').textContent = '';
+    document.querySelectorAll('.m-card').forEach(x => x.classList.remove('matched', 'selected', 'wrong'));
+  }
+
+  // LOGIC VÒNG 2: TRẮC NGHIỆM
+  const quizLocked = {};
+  function ansQuiz(id, btn, isOk, msg) {
+    if (quizLocked[id]) return;
+    const exp = document.getElementById('qexp-' + id);
+    exp.style.display = 'block';
+    exp.textContent = msg;
+    if (isOk) {
+      sfxOk();
+      btn.classList.add('ok');
+      exp.style.background = '#dcfce7';
+      exp.style.color = '#166534';
+      exp.style.border = '1.5px solid #16a34a';
+      quizLocked[id] = true;
+      addScore(15);
+      document.querySelectorAll('#qc-' + id + ' .q-btn').forEach(b => b.disabled = true);
+    } else {
+      sfxErr();
+      btn.classList.add('err');
+      exp.style.background = '#ffe4e6';
+      exp.style.color = '#9f1239';
+      exp.style.border = '1.5px solid #e11d48';
+    }
+  }
+</script>
